@@ -26,7 +26,7 @@
 
     .form-box{
         width: 380px;
-        height: 510px;
+        height: 310px;
         position: relative;
         margin: 5% auto;
         background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), transparent;
@@ -38,7 +38,6 @@
         width: 220px;
         margin: 35px auto;
         position: relative;
-        box-shadow: 0 0 20px 9px #ffd3001f;
         border-radius: 30px;
     }
 
@@ -85,6 +84,7 @@
     border-bottom: 1px solid #eee7e7;
     outline: none;
     background: transparent;
+    color: white;
 }
 
 .input-field::placeholder{
@@ -96,7 +96,8 @@
     padding: 10px 30px;
     cursor: pointer;
     display: block;
-    margin: auto;
+    margin-top: 10px;
+    margin-left: 20px;
     background: linear-gradient(to right, #5d4f08, #ffd300);
     border: 0;
     outline: none;
@@ -118,9 +119,6 @@ span{
     left: 50px;
 }
 
-#register{
-    left: 450px;
-}
 
 .text{
 color: #fff;
@@ -169,11 +167,9 @@ font-size: 25px;
                 <i class="bi bi-google"></i>
             </div> 
 
-            <form action="" id="login" class="input-group">
-                <input type="email" class="input-field" placeholder="Email" required>
-                <input type="password" class="input-field" placeholder="Password" required>
-                <input type="checkbox" class="check-box"><span>Remember Password</span>
-                <button type="button" class="submit-btn">Login</button>
+            <form action="Forgotpas_Action_JDBC.jsp" method="post" id="login" class="input-group">
+                <input type="email" name="email" class="input-field" placeholder="Email" required>
+                <button type="submit" class="submit-btn">Submit</button>
                 <a href="Login.jsp" class="text">Register</a>
             </form>
         </div>
