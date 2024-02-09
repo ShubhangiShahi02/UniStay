@@ -13,7 +13,7 @@ try {
     
     if (con != null) {
         Statement st = con.createStatement();
-        String q1 = "CREATE TABLE IF NOT EXISTS user (username VARCHAR(100), mobilenumber BIGINT, email VARCHAR(100) PRIMARY KEY, password VARCHAR(100))";
+        String q1 = "CREATE TABLE IF NOT EXISTS user (username VARCHAR(100), mobilenumber BIGINT, email VARCHAR(100) PRIMARY KEY, password VARCHAR(100), reset_token VARCHAR(255))";
         System.out.print(q1);
         st.execute(q1);
         System.out.println("Table Created");
