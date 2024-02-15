@@ -6,19 +6,17 @@ import java.util.Properties;
 
 public class EmailSender {
     public static void sendResetPasswordEmail(String recipientEmail, String resetToken) {
-        final String senderEmail = "spardhashahi@gmail.com"; // Change this
-        final String senderPassword = "Shubh#0211"; // Change this
+        final String senderEmail = "spardhashahi@gmail.com"; // Change this to your Gmail address
+        final String username = "spardhashahi@gmail.com"; // Change this to your Gmail address
+        final String password = "iico islw wqbe bwtd"; // Change this to your Gmail password
 
         // Setup mail server properties
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com"); // Change this
-        props.put("mail.smtp.port", "465"); // Change this
-        props.put("mail.smtp.socketFactory.port", "465");
-        
-        String username="smtp test shubh";
-        String password="iico islw wqbe bwtd";
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "465"); // Use port 465 for SSL/TLS
+        props.put("mail.smtp.ssl.enable", "true");
 
         // Create session with authenticator
         Session session = Session.getInstance(props, new Authenticator() {
@@ -44,7 +42,7 @@ public class EmailSender {
             // Set email body
             String emailBody = "Dear User,\n\n";
             emailBody += "Please click on the following link to reset your password:\n";
-            emailBody += "http://yourwebsite.com/resetpassword?token=" + resetToken + "\n\n";
+            emailBody += "http://localhost:13627/UniStayPro/Reset_Password.jsp?token=" + resetToken + "\n\n";
             emailBody += "If you didn't request a password reset, you can ignore this email.\n\n";
             emailBody += "Best regards,\nYour Website Team";
             message.setText(emailBody);
