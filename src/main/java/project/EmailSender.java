@@ -6,9 +6,9 @@ import java.util.Properties;
 
 public class EmailSender {
     public static void sendResetPasswordEmail(String recipientEmail, String resetToken) {
-        final String senderEmail = "spardhashahi@gmail.com"; // Change this to your Gmail address
-        final String username = "spardhashahi@gmail.com"; // Change this to your Gmail address
-        final String password = "iico islw wqbe bwtd"; // Change this to your Gmail password
+        final String senderEmail = "spardhashahi@gmail.com"; 
+        final String username = "spardhashahi@gmail.com"; 
+        final String password = "iico islw wqbe bwtd"; 
 
         // Setup mail server properties
         Properties props = new Properties();
