@@ -15,6 +15,8 @@ try {
     validatePs.setString(2, resetToken);
     ResultSet validateRs = validatePs.executeQuery();
 
+    String message = ""; // Initialize message variable
+
     if (validateRs.next()) {
         // Reset token is valid, update the password
         String updateQuery = "UPDATE user SET password=? WHERE email=?";
@@ -30,11 +32,25 @@ try {
         updatePs.executeUpdate();
         updatePs.close();
        
-        
-        // Redirect to a page indicating password reset success
+        // Clean up reset token record
+        String cleanupQuery = "UPDATE user SET reset_token = NULL WHERE email=?";
+        PreparedStatement cleanupPs = con.prepareStatement(cleanupQuery);
+        cleanupPs.setString(1, email);
+        cleanupPs.executeUpdate();
+        cleanupPs.close();
+
+        // Set success message in session
+        message = "Password reset successful!";
+        request.getSession().setAttribute("message", message);
+
+        // Redirect to Login.jsp
         response.sendRedirect("Login.jsp");
     } else {
-        // Invalid reset token, redirect to error page
+        // Set error message in session
+        message = "Invalid reset token. Please try again.";
+        request.getSession().setAttribute("message", message);
+
+        // Redirect to forgotpas.jsp
         response.sendRedirect("forgotpas.jsp");
     }
 
@@ -45,7 +61,7 @@ try {
 } catch (SQLException e) {
     // Handle database errors
     e.printStackTrace();
-}  catch (NoSuchAlgorithmException e) {
+} catch (NoSuchAlgorithmException e) {
     // Handle hashing algorithm errors
     e.printStackTrace();
 } 

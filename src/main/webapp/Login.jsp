@@ -28,9 +28,9 @@
 
     .form-box{
         width: 380px;
-        height: 510px;
+        height: 500px;
         position: relative;
-        margin: 5% auto;
+        margin: 3% auto;
         background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), transparent;
         padding: 5px;
         overflow: hidden;
@@ -192,7 +192,17 @@ font-size: 25px;
             </div> 
 
 <!--Login-->
-
+ <%
+    // Check if the message is not null before displaying it
+    String message = (String)session.getAttribute("message");
+    if (message != null) {
+    %>
+    <p style="color: white; text-align: center;"><%= message %></p>
+    <%
+        // Remove the message from the session
+        session.removeAttribute("message");
+    }
+    %>
             <form action="Login_Action_JDBC.jsp" method="post" id="login" class="input-group">
                 <input type="email" name="email" class="input-field" placeholder="Email" required>
                 <input type="password" name="password" class="input-field" placeholder="Password" required>
@@ -200,7 +210,6 @@ font-size: 25px;
                 <button type="submit" class="submit-btn">Login</button>
                 <a href="forgotpas.jsp" class="text">Forgot Password</a>
             </form>
-
 <!--Register-->
 
             <form action="Signup_Action_JDBC.jsp" method="post" id="register" class="input-group">
