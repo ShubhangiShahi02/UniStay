@@ -210,6 +210,15 @@ font-size: 25px;
                 <button type="submit" class="submit-btn">Login</button>
                 <a href="forgotpas.jsp" class="text">Forgot Password</a>
             </form>
+            
+            <%
+    String error = request.getParameter("error");
+    if (error != null && error.equals("1")) {
+%>
+    <script>alert("Incorrect email or password");</script>
+<%
+    }
+%>
 <!--Register-->
 
             <form action="Signup_Action_JDBC.jsp" method="post" id="register" class="input-group">

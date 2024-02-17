@@ -174,6 +174,18 @@ font-size: 25px;
                 <button type="submit" class="submit-btn">Submit</button>
                 <a href="Login.jsp" class="text">Register</a>
             </form>
+             <%
+    // Check if the message is not null before displaying it
+    String message = (String)session.getAttribute("message");
+    if (message != null) {
+    %>
+    <p style="color: white; text-align: center;"><%= message %></p>
+    <%
+        // Remove the message from the session
+        session.removeAttribute("message");
+    }
+    %>
+        
         </div>
      
     </div>

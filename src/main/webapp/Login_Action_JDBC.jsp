@@ -1,6 +1,5 @@
 <!-- Login_Action_JDBC.jsp -->
-<%@ page import="java.sql.*, java.security.MessageDigest, java.security.NoSuchAlgorithmException" %>
-<%@page import="java.util.Base64" %>
+<%@ page import="java.sql.*, java.security.MessageDigest, java.security.NoSuchAlgorithmException, jakarta.servlet.http.Cookie, jakarta.servlet.http.HttpSession, jakarta.servlet.RequestDispatcher" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 try {
@@ -10,7 +9,9 @@ try {
     // Hash the password
     MessageDigest md = MessageDigest.getInstance("SHA-256");
     byte[] hashedPasswordBytes = md.digest(plainPassword.getBytes("UTF-8"));
-    String hashedPassword = Base64.getEncoder().encodeToString(hashedPasswordBytes);
+    
+    // Encode the hashed password bytes using Base64
+    String hashedPassword = java.util.Base64.getEncoder().encodeToString(hashedPasswordBytes);
 
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
 
@@ -21,16 +22,15 @@ try {
     ResultSet rs = ps.executeQuery();
 
     if (rs.next()) {
-        // Login successful, redirect to home page
+        // Login successful, set session and redirect to home page
+        HttpSession sess = request.getSession();
+        sess.setAttribute("username", email); // Change "email" to "username"
         response.sendRedirect("Home.jsp");
     } else {
         // Login failed, redirect back to login page with error message
-        RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
-        rd.include(request, response);
-%>
-        <script>alert("Incorrect email or password");</script>
-<%
+        response.sendRedirect("Login.jsp?error=1");
     }
+
     con.close();
 } catch (SQLException | NoSuchAlgorithmException e) {
     // Handle exceptions appropriately

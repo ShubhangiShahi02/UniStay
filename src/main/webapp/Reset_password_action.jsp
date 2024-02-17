@@ -51,7 +51,7 @@ try {
         request.getSession().setAttribute("message", message);
 
         // Redirect to forgotpas.jsp
-        response.sendRedirect("forgotpas.jsp");
+        response.sendRedirect("Reset_Password.jsp");
     }
 
     validateRs.close();

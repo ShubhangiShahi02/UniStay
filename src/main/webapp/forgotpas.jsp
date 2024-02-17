@@ -166,18 +166,7 @@ font-size: 25px;
                 <i class="bi bi-whatsapp"></i>
                 <i class="bi bi-google"></i>
             </div> 
- <%
-    // Check if the message is not null before displaying it
-    String message = (String)session.getAttribute("message");
-    if (message != null) {
-    %>
-    <p style="color: white; text-align: center;"><%= message %></p>
-    <%
-        // Remove the message from the session
-        session.removeAttribute("message");
-    }
-    %>
-          <form action="Forgotpas_Action_JDBC.jsp" method="post" id="login" class="input-group">
+  <form action="Forgotpas_Action_JDBC.jsp" method="post" id="login" class="input-group">
                 <input type="email" name="email" class="input-field" placeholder="Email" required>
                 <button type="submit" class="submit-btn">Submit</button>
                 <a href="Login.jsp" class="text">Register</a>
