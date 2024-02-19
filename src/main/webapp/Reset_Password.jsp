@@ -139,13 +139,13 @@ padding-right: 30px;
 padding-top: 10px;
 color:  #ffd300;
 text-decoration: none;
-font-size: 25px;
+font-size: 20px;
 }
 
 .navbar span{
-margin:41px;
+margin:35px;
 text-decoration: none;
-font-size: 25px;
+font-size: 20px;
 }
 </style>
 </head>
@@ -171,7 +171,7 @@ font-size: 25px;
                 <input type="email" name="email" class="input-field" placeholder="Email" required>
                  <input type="text" name="reset_token" class="input-field" placeholder="Reset-Token" required>
                 <input type="password" name="password" class="input-field" placeholder="Password" required>
-                <button type="submit" class="submit-btn">Submit</button>
+                <button type="submit" class="submit-btn">Reset Password</button>
                 <a href="Login.jsp" class="text">Register</a>
             </form>
              <%

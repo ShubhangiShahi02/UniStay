@@ -3,14 +3,16 @@
 <%
     response.setContentType("text/html");
     HttpSession sess = request.getSession(false);
-    if (sess != null && sess.getAttribute("username") != null) {
-        RequestDispatcher rd1 = request.getRequestDispatcher("/Home.jsp");
-        rd1.include(request, response);
+    String email = (String) sess.getAttribute("username"); // Retrieve email attribute
+    
+    if (email != null && !email.isEmpty()) { // Check if email is not null or empty
 %>
     <script>
         window.alert("Welcome to Home Page");
     </script>
 <%
+        RequestDispatcher rd1 = request.getRequestDispatcher("/Home.jsp");
+        rd1.include(request, response);
     } else {
 %>
     <script>
@@ -21,5 +23,3 @@
         rd2.include(request, response);
     }
 %>
-
-

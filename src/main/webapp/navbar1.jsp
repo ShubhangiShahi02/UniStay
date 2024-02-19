@@ -51,21 +51,30 @@ font-size: 16px;
           <a class="nav-link active text-white"  aria-current="page" href="Home.jsp">Home</a>
         </li>
        <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="#about">About</a>
+          <a class="nav-link text-white" aria-current="page" href="index.jsp\#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="#services">Services</a>
+          <a class="nav-link text-white" aria-current="page" href="index.jsp\#services">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="index.jsp">Portfolio</a>
+          <a class="nav-link text-white" aria-current="page" href="index.jsp\#portfolio">Portfolio</a>
         </li>
-       <li class="nav-item">
-          <a class="nav-link text-white"   href="#!" data-bs-toggle="modal" data-bs-target="#profile-Modal"> <i class="bi bi-person-circle"></i>My Profile</a>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="index.jsp\#contact">Contact</a>
         </li>
+      
         
-         <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="logout_action.jsp">Logout</a>
+         
+        <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+    <ul class="dropdown-menu">
+      <li class="nav-item">
+          <a class="nav-link"   href="#!" data-bs-toggle="modal" data-bs-target="#profile-Modal">My Profile</a>
         </li>
+      <li><hr class="dropdown-divider"></li>
+      <li class="nav-item"><a class="nav-link " aria-current="page" href="logout_action.jsp">Logout</a></li>
+    </ul>
+  </li>
       </ul>
      
     </div>
@@ -77,11 +86,26 @@ font-size: 16px;
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">My-Profile</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+       <%
+    HttpSession sess = request.getSession(false);
+    if (sess != null && sess.getAttribute("username") != null) {
+        String username = (String) sess.getAttribute("username");
+        String email = (String) sess.getAttribute("email");
+%>
+        <p><strong>Email:</strong> <%= username %></p>
+        <p><strong>Username:</strong> <%= email %></p>
+<%
+    } else {
+%>
+        <p>User is not logged in. Please log in to view the profile.</p>
+<%
+    }
+%>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -139,13 +139,13 @@ padding-right: 30px;
 padding-top: 10px;
 color:  #ffd300;
 text-decoration: none;
-font-size: 25px;
+font-size: 20px;
 }
 
 .navbar span{
-margin:41px;
+margin:35px;
 text-decoration: none;
-font-size: 25px;
+font-size: 20px;
 }
 </style>
 </head>

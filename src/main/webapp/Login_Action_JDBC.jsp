@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 try {
-    String email = request.getParameter("email");
+    String username = request.getParameter("email"); 
     String plainPassword = request.getParameter("password");
 
     // Hash the password
@@ -17,14 +17,14 @@ try {
 
     String query = "SELECT * FROM user WHERE email=? AND password=?";
     PreparedStatement ps = con.prepareStatement(query);
-    ps.setString(1, email);
+    ps.setString(1, username); 
     ps.setString(2, hashedPassword);
     ResultSet rs = ps.executeQuery();
 
     if (rs.next()) {
         // Login successful, set session and redirect to home page
         HttpSession sess = request.getSession();
-        sess.setAttribute("username", email); // Change "email" to "username"
+        sess.setAttribute("username", username); 
         response.sendRedirect("Home.jsp");
     } else {
         // Login failed, redirect back to login page with error message
