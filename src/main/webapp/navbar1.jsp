@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +37,12 @@ i{
 margin-right: 4px;
 font-size: 16px;
 }
+
+.modal-body i{
+font-size: 80px;
+color: grey;
+}
+
 </style>
 </head>
 <body>
@@ -82,39 +89,48 @@ font-size: 16px;
 </nav>
 
 <!-- My Profile-->
-<div class="modal fade" id="profile-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="profile-Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">My-Profile</h1>
+      <div class="modal-header bg-warning text-dark">
+       <h1 id="ModalLabel" class="fs-5 d-flex justify-content-center">UniStay</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-       <%
-    HttpSession sess = request.getSession(false);
-    if (sess != null && sess.getAttribute("username") != null) {
-        String username = (String) sess.getAttribute("username");
-        String email = (String) sess.getAttribute("email");
-%>
-        <p><strong>Email:</strong> <%= username %></p>
-        <p><strong>Username:</strong> <%= email %></p>
-<%
-    } else {
-%>
-        <p>User is not logged in. Please log in to view the profile.</p>
-<%
-    }
-%>
+        <ul class="list-unstyled" style="text-align: center;">
+          <% 
+          try {
+              Class.forName("com.mysql.cj.jdbc.Driver");
+              Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
 
+              Statement stmt = con.createStatement();
+              ResultSet rs = stmt.executeQuery("SELECT * FROM user");
+
+              while (rs.next()) {
+          %>
+                    <li><i class="bi bi-person-circle"></i></li>
+                    <li class="fs-4"><span class="fw-bold fs-4">Username: </span> <%= rs.getString("username") %></li>
+                   <li class="fs-4"><span class="fw-bold fs-4">Mobile No.: </span>+91 <%= rs.getString("mobilenumber") %></li>
+                   <li class="fs-4"><span class="fw-bold fs-4">Email: </span> <%= rs.getString("email") %></li>
+          <% 
+              }
+              rs.close();
+              stmt.close();
+              con.close();
+          } catch(Exception e) {
+              e.printStackTrace();
+          }
+          %>
+        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-warning">Save changes</button>
       </div>
     </div>
   </div>
 </div>
-   
+
   
 
 </body>

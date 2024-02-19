@@ -1,10 +1,7 @@
-<!-- Signup_Action_JDBC.jsp -->
-<%@page import="java.sql.*" %>
-<%@page import="java.security.MessageDigest" %>
-<%@page import="java.security.NoSuchAlgorithmException" %>
-<%@page import="java.util.Base64" %>
+<%@ page import="java.sql.*, java.security.MessageDigest, java.security.NoSuchAlgorithmException, java.util.Base64" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<% 
+<%
 String username = request.getParameter("username");
 String mobileno = request.getParameter("mobileno");
 String email = request.getParameter("email");
@@ -28,17 +25,13 @@ try {
             
     int i = ps.executeUpdate();
     if (i > 0) {
+        request.setAttribute("successMessage", "Successfully Registered !!");
         RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
         rd.forward(request, response);
-%>
-        <script>alert("Successfully Registered !!");</script>
-<%
     } else {
+        request.setAttribute("errorMessage", "Server failed to register!!");
         RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
         rd.forward(request, response);
-%>
-        <script>alert("Server failed to register!!");</script>
-<%
     }
     con.close();
 } catch(NoSuchAlgorithmException e1) {
@@ -49,5 +42,4 @@ try {
     System.out.println("Error occurred: " + e.getMessage());
     e.printStackTrace();
 }
-
 %>
