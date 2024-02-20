@@ -69,11 +69,29 @@ color: grey;
         <li class="nav-item">
           <a class="nav-link text-white" aria-current="page" href="index.jsp\#contact">Contact</a>
         </li>
-      
-        
-         
+     
         <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+         <% 
+          try {
+              Class.forName("com.mysql.cj.jdbc.Driver");
+              Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
+
+              Statement stmt = con.createStatement();
+              ResultSet rs = stmt.executeQuery("SELECT * FROM user");
+
+              while (rs.next()) {
+          %>
+                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-person-circle"></i><%= rs.getString("username") %></a>    
+          <% 
+              }
+              rs.close();
+              stmt.close();
+              con.close();
+          } catch(Exception e) {
+              e.printStackTrace();
+          }
+          %>
+   
     <ul class="dropdown-menu">
       <li class="nav-item">
           <a class="nav-link"   href="#!" data-bs-toggle="modal" data-bs-target="#profile-Modal">My Profile</a>
@@ -97,7 +115,33 @@ color: grey;
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="list-unstyled" style="text-align: center;">
+      <div class="text-center">
+         <i class="bi bi-person-circle"></i>
+      </div>
+     <div class="container text-center">
+      <% 
+          try {
+              Class.forName("com.mysql.cj.jdbc.Driver");
+              Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
+
+              Statement stmt = con.createStatement();
+              ResultSet rs = stmt.executeQuery("SELECT * FROM user");
+
+              while (rs.next()) {
+          %>
+     <h5 class="modal-title"><%= rs.getString("username") %></h5>
+     <% 
+              }
+              rs.close();
+              stmt.close();
+              con.close();
+          } catch(Exception e) {
+              e.printStackTrace();
+          }
+          %>
+     </div>
+        <table class="table">
+        <tbody>
           <% 
           try {
               Class.forName("com.mysql.cj.jdbc.Driver");
@@ -108,10 +152,24 @@ color: grey;
 
               while (rs.next()) {
           %>
-                    <li><i class="bi bi-person-circle"></i></li>
-                    <li class="fs-4"><span class="fw-bold fs-4">Username: </span> <%= rs.getString("username") %></li>
-                   <li class="fs-4"><span class="fw-bold fs-4">Mobile No.: </span>+91 <%= rs.getString("mobilenumber") %></li>
-                   <li class="fs-4"><span class="fw-bold fs-4">Email: </span> <%= rs.getString("email") %></li>
+          
+         
+                  
+                  <tr>
+                  <th scope="row">Username: </th>
+                  <td><%= rs.getString("username") %></td>
+                  </tr>
+                  
+                  <tr>
+                  <th scope="row">Mobile No.: </th>
+                  <td><%= rs.getString("mobilenumber") %></td>
+                  </tr>
+                  
+                  <tr>
+                  <th scope="row">Email: </th>
+                  <td><%= rs.getString("email") %></td>
+                  </tr>
+                  
           <% 
               }
               rs.close();
@@ -121,11 +179,12 @@ color: grey;
               e.printStackTrace();
           }
           %>
-        </ul>
+          </tbody>
+        </table>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning">Save changes</button>
+        <button type="button" class="btn btn-warning">Edit Profile</button>
       </div>
     </div>
   </div>
