@@ -26,7 +26,7 @@ try {
     int i = ps.executeUpdate();
     if (i > 0) {
         request.setAttribute("successMessage", "Successfully Registered !!");
-        RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
     } else {
         request.setAttribute("errorMessage", "Server failed to register!!");

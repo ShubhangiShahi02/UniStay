@@ -13,10 +13,12 @@ try {
     
     if (con != null) {
         Statement st = con.createStatement();
-        String q1 = "CREATE TABLE IF NOT EXISTS user (username VARCHAR(100), mobilenumber BIGINT, email VARCHAR(100) PRIMARY KEY, password VARCHAR(100), reset_token VARCHAR(255), image LONGBLOB)";
-        System.out.print(q1);
-        st.execute(q1);
-        System.out.println("Table Created");
+        
+        // Alter table to add image column
+        String alterQuery = "ALTER TABLE user ADD COLUMN ";
+        st.execute(alterQuery);
+        System.out.println("Image column added to user table");
+        
         con.close();
     } else {
         System.out.println("Failed to establish a database connection");

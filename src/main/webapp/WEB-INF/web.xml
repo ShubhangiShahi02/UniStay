@@ -19,4 +19,14 @@
     <servlet-name>Home_action</servlet-name>
     <url-pattern>/Home_action</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProFileUploadServlet</display-name>
+    <servlet-name>ProFileUploadServlet</servlet-name>
+    <servlet-class>project.ProFileUploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProFileUploadServlet</servlet-name>
+    <url-pattern>/ProFileUploadServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
