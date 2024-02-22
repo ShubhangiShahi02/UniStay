@@ -15,7 +15,7 @@ try {
         Statement st = con.createStatement();
         
         // Alter table to add image column
-        String alterQuery = "ALTER TABLE user ADD COLUMN ";
+        String alterQuery = "ALTER TABLE image ADD COLUMN email VARCHAR(255)";
         st.execute(alterQuery);
         System.out.println("Image column added to user table");
         

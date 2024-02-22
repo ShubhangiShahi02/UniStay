@@ -1,5 +1,5 @@
 <!-- Login_Action_JDBC.jsp -->
-<%@ page import="java.sql.*, java.security.MessageDigest, java.security.NoSuchAlgorithmException, jakarta.servlet.http.Cookie, jakarta.servlet.http.HttpSession, jakarta.servlet.RequestDispatcher" %>
+<%@ page import="java.sql.*, java.security.MessageDigest, java.security.NoSuchAlgorithmException, jakarta.servlet.http.HttpSession, jakarta.servlet.RequestDispatcher" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 try {
@@ -23,8 +23,9 @@ try {
 
     if (rs.next()) {
         // Login successful, set session and redirect to home page
+        String email = rs.getString("email"); // Retrieve email from the database
         HttpSession sess = request.getSession();
-        sess.setAttribute("username", username); 
+        sess.setAttribute("email", email); // Store email in session
         response.sendRedirect("Home.jsp");
     } else {
         // Login failed, redirect back to login page with error message

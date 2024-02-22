@@ -1,10 +1,18 @@
 package project;
 
-import java.io.*;
-import java.sql.*;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 
 @MultipartConfig(
     fileSizeThreshold = 1024 * 1024 * 2,  // 2MB
@@ -14,55 +22,69 @@ import jakarta.servlet.annotation.MultipartConfig;
 public class ProFileUploadServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Database connection details
         String url = "jdbc:mysql://localhost:3306/unistay";
         String user = "root";
         String password = "root";
 
+        // Get the uploaded file
+        Part filePart = request.getPart("profilePic");
+        InputStream inputStream = filePart.getInputStream();
+
+        // Get the email from the session
+        String email = (String) request.getSession().getAttribute("email"); // Updated from "username" to "email"
+
+        Connection conn = null;
+        String message = null;
+
         try {
-            Part filePart = request.getPart("profilePic");
-            String userEmail = ""; // Initialize user email variable
+            // Connect to the database
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection(url, user, password);
+            
+            // Delete the existing image for this email
+            deleteExistingImage(conn, email);
 
-            // Retrieve user email from the session or database
-            // This could vary based on your application's design
-            // For this example, we assume it's stored in the session
-            HttpSession session = request.getSession();
-            if (session != null && session.getAttribute("email") != null) {
-                userEmail = (String) session.getAttribute("email");
+            // Create SQL query to insert the image into the database
+            String sql = "INSERT INTO image (image, email) VALUES (?, ?)";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setBlob(1, inputStream);
+            statement.setString(2, email);
+
+            // Execute the query
+            int row = statement.executeUpdate();
+            if (row > 0) {
+                message = "Image uploaded and saved into database";
             }
-
-            if (filePart != null) {
-                try (InputStream inputStream = filePart.getInputStream();
-                     Connection conn = DriverManager.getConnection(url, user, password)) {
-
-                    // Check if user email is valid
-                    if (!userEmail.isEmpty()) {
-                        String sql = "INSERT INTO user (email, image) VALUES (?, ?)";
-                        try (PreparedStatement statement = conn.prepareStatement(sql)) {
-                            statement.setString(1, userEmail);
-                            statement.setBlob(2, inputStream);
-                            int row = statement.executeUpdate();
-                            if (row > 0) {
-                                request.setAttribute("Message", "Image uploaded and saved into database");
-                            }
-                        }
-                    } else {
-                        request.setAttribute("Message", "User email not found or invalid!");
-                    }
-                } catch (SQLException ex) {
-                    request.setAttribute("Message", "ERROR: " + ex.getMessage());
+        } catch (SQLException | ClassNotFoundException ex) {
+            message = "ERROR: " + ex.getMessage();
+            ex.printStackTrace();
+        } finally {
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-            } else {
-                request.setAttribute("Message", "No file uploaded!");
             }
-        } catch (IOException | ServletException e) {
-            request.setAttribute("Message", "ERROR: " + e.getMessage());
-            e.printStackTrace();
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            request.setAttribute("Message", message);
+            getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
         }
-
-        request.getRequestDispatcher("/Home.jsp").forward(request, response);
     }
-
+    
+    // Method to delete the existing image for the given email
+    private void deleteExistingImage(Connection conn, String email) throws SQLException {
+        String sql = "DELETE FROM image WHERE email = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, email);
+        statement.executeUpdate();
+    }
 }
