@@ -125,7 +125,8 @@ width: 100%;
       <img src="image/first.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
         <h5>Perfect home guarantee</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+        <p>The perfect home guarantee assures satisfaction by offering solutions to address any issues
+         and ensure your home meets your expectations.</p>
           <button type="button" class="btn btn-warning">Learn More</button> 
       </div>
     </div>
@@ -133,7 +134,8 @@ width: 100%;
       <img src="image/second.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
         <h5>Price Match Promise</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <p>Our price match promise guarantees that we'll match any lower price found 
+        elsewhere, ensuring you get the best deal possible.</p>
           <button type="button" class="btn btn-warning">Learn More</button> 
       </div>
     </div>
@@ -141,7 +143,9 @@ width: 100%;
       <img src="image/third.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
         <h5>24-Hours service for Expert Booking</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+        <p>24/7 expert booking service ensures round-the-clock assistance for scheduling
+         appointments or consultations
+         with qualified professionals for various needs.</p>
          <button type="button" class="btn btn-warning">Learn More</button> 
       </div>
     </div>

@@ -8,133 +8,139 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-.navbar{
-background: rgba(0,0,0,0.2);
+.navbar {
+  background: rgba(0, 0, 0, 0.2);
 }
-.navbar-nav a{
-font-size: 15px;
-font-weight: 500;
+
+.navbar-nav a {
+  font-size: 15px;
+  font-weight: 500;
 }
-.navbar-light .navbar-brand{
-font-size: 25px;
-font-weight: 900;
-letter-spacing: 2px;
+
+.navbar-light .navbar-brand {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2px;
 }
+
 .navbar-nav a:hover,
-.navbar-nav a:focus
-{
-text-decoration: underline;
-}
-.w-100{
-height: 100vh;
-}
- @media only screen and (max-width: 767px){
- .navbar-nav{
- text-align: center;
- }
- }
- 
-i{
-margin-right: 4px;
-font-size: 16px;
+.navbar-nav a:focus {
+  text-decoration: underline;
 }
 
-.modal-body i{
-font-size: 80px;
-color: grey;
+.w-100 {
+  height: 100vh;
 }
 
+@media only screen and (max-width: 767px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+i {
+  margin-right: 4px;
+  font-size: 16px;
+}
+
+.modal-body i {
+  font-size: 80px;
+  color: grey;
+}
 
 h1 {
-            text-align: center;
-        }
+  text-align: center;
+}
 
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-        label {
-            font-weight: bold;
-        }
+label {
+  font-weight: bold;
+}
 
-        input[type="submit"] {
-            background:linear-gradient(to right, #5d4f08, #ffd300);
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: block;
-            margin: 0 auto;
-        }
+input[type="submit"] {
+  background: linear-gradient(to right, #5d4f08, #ffd300);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
 
-      input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-          
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
 .file-link {
-    color: blue; 
-    text-decoration: underline; 
-    cursor: pointer; 
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 input[type="file"] {
-    display: none;
+  display: none;
 }
- 
+
 .file-link {
-    color: #ffd300; /* Link color */
-    text-decoration: underline; /* Underline the text */
-    cursor: pointer; /* Show pointer cursor on hover */
+  color: #ffd300; /* Link color */
+  text-decoration: underline; /* Underline the text */
+  cursor: pointer; /* Show pointer cursor on hover */
 }
-      
-    #imageContainer {
-    background-color: #ddd; /* Set background color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-     .modal-header{
-      background:linear-gradient(to right, #5d4f08, #ffd300);
-     }   
-     
-     #imageContainer1 {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto;
-            background-size: cover;
-            background-position: center;
-        }
-        #previewImage {
-            max-width: 100%;
-            max-height: 100%;
-            display: none;
-        }
-     
-     .input-field{
-    width: 100%;
-    padding: 10px 0;
-    margin: 5px 0;
-    border-left: 0;
-    border-top: 0;
-    border-right: 0;
-    border-bottom: 1px solid #eee7e7;
-    outline: none;
-    background: transparent;
-    color: white;
+
+#imageContainer {
+  background-color: #ddd; /* Set background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.modal-header {
+  background: linear-gradient(to right, #5d4f08, #ffd300);
+}
+
+#imageContainer1 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+}
+
+#previewImage {
+  max-width: 100%;
+  max-height: 100%;
+  display: none;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #eee7e7;
+  outline: none;
+  background: transparent;
+  color: white;
+}
+
 </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg fixed-top">
-  <div class="container">
+  <div class="container-fluid">
     <a class="navbar-brand text-white" href="Home.jsp" ><span class="text-warning">Uni</span>Stay</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -208,10 +214,9 @@ try {
       <li class="nav-item"><a class="nav-link " aria-current="page" href="logout_action.jsp">Logout</a></li>
     </ul>
   </li>
-      </ul>
-     
-    </div>
-  </div>
+</ul>
+</div>
+</div>
 </nav>
 
 <!-- My Profile-->
