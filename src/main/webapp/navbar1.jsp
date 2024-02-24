@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>navbar1</title>
 <style>
 .navbar {
   background: rgba(0, 0, 0, 0.2);
@@ -214,6 +214,12 @@ input[type="file"] {
       <li class="nav-item"><a class="nav-link " aria-current="page" href="logout_action.jsp">Logout</a></li>
     </ul>
   </li>
+  
+   <li class="nav-item">
+  <a class="btn btn-outline-light" href="Post_Property.jsp">
+  <i class="bi bi-upload"></i> Post Property
+</a>
+   </li>
 </ul>
 </div>
 </div>
