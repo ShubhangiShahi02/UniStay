@@ -5,7 +5,7 @@
 HttpSession sess= request.getSession(false); // Retrieve existing session without creating a new one
 
 // Check if session exists and if the email attribute is set
-if (session != null && session.getAttribute("email") != null) {
+if (session != null && session.getAttribute("userEmail") != null) {
     // User is already logged in, redirect to home page or perform desired action
     response.sendRedirect("Home.jsp");
 } else {

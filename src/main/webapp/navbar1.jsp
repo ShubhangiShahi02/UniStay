@@ -371,7 +371,10 @@ try {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning text-white" style="background:linear-gradient(to right, #5d4f08, #ffd300);">Edit Profile</button>
+        <a type="button" class="btn text-white" style="background:linear-gradient(to right, #5d4f08, #ffd300); padding: 10px 20px; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;" href="EditUserProfile.jsp">Edit Profile</a>
+   <a type="button" class="btn text-white" style="background:linear-gradient(to right, #5d4f08, #ffd300); padding: 10px 20px; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;" href="DeleteAccount.jsp">Delete Account</a>
+
+
       </div>
     </div>
   </div>
@@ -400,7 +403,8 @@ try {
     <label for="profilePic" class="file-link" id="fileLabel">Choose Profile Picture</label>
     <input type="file" id="profilePic" name="profilePic" style="display: none;" onchange="displayFile()">
     <br>    
-    <input type="submit" id="submitBtn" value="Upload">
+    <input type="submit" id="submitBtn" value="Upload" style="background:linear-gradient(to right, #5d4f08, #ffd300); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+
 </form>
         </div>
       </div>
