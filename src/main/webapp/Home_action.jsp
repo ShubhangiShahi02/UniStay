@@ -3,11 +3,11 @@
 <%
 response.setContentType("text/html");
 
-// Retrieve email attribute from session
-HttpSession sess = request.getSession(false);
-String email = (String) sess.getAttribute("email");
+// Retrieve user email attribute from session
+HttpSession sess = request.getSession(false); // Do not create a new session if one doesn't exist
+String userEmail = (String) session.getAttribute("userEmail");
 
-if (email != null && !email.isEmpty()) { // Check if email is not null or empty
+if (userEmail != null && !userEmail.isEmpty()) { // Check if user email is not null or empty
 %>
     <script>
         window.alert("Welcome to Home Page");

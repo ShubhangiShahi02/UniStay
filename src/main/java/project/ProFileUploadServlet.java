@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.ServletException;
@@ -33,7 +32,7 @@ public class ProFileUploadServlet extends HttpServlet {
         InputStream inputStream = filePart.getInputStream();
 
         // Get the email from the session
-        String email = (String) request.getSession().getAttribute("email"); // Updated from "username" to "email"
+        String userEmail = (String) request.getSession().getAttribute("userEmail"); // Updated from "username" to "email"
 
         Connection conn = null;
         String message = null;
@@ -44,13 +43,13 @@ public class ProFileUploadServlet extends HttpServlet {
             conn = DriverManager.getConnection(url, user, password);
             
             // Delete the existing image for this email
-            deleteExistingImage(conn, email);
+            deleteExistingImage(conn, userEmail); // Updated from "email" to "userEmail"
 
             // Create SQL query to insert the image into the database
             String sql = "INSERT INTO image (image, email) VALUES (?, ?)";
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setBlob(1, inputStream);
-            statement.setString(2, email);
+            statement.setString(2, userEmail); // Updated from "email" to "userEmail"
 
             // Execute the query
             int row = statement.executeUpdate();
@@ -81,10 +80,10 @@ public class ProFileUploadServlet extends HttpServlet {
     }
     
     // Method to delete the existing image for the given email
-    private void deleteExistingImage(Connection conn, String email) throws SQLException {
+    private void deleteExistingImage(Connection conn, String userEmail) throws SQLException { // Updated from "email" to "userEmail"
         String sql = "DELETE FROM image WHERE email = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setString(1, email);
+        statement.setString(1, userEmail); // Updated from "email" to "userEmail"
         statement.executeUpdate();
     }
 }

@@ -165,40 +165,40 @@ input[type="file"] {
   
         <li class="nav-item dropdown">
          <% 
-try {
-    Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
+         try {
+        	    Class.forName("com.mysql.cj.jdbc.Driver");
+        	    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
 
-    Statement stmt = con.createStatement();
-    ResultSet rs = stmt.executeQuery("SELECT * FROM user");
+        	    Statement stmt = con.createStatement();
+        	    ResultSet rs = stmt.executeQuery("SELECT * FROM user");
 
-    // Get the email from the session
-    String email = (String) session.getAttribute("email");
+        	    // Get the email from the session
+        	    String userEmail = (String) session.getAttribute("userEmail");
 
-    while (rs.next()) {
-        String username = rs.getString("username");
-        String userEmail = rs.getString("email");
-        
-        // Check if the current user's email matches the one in the session
-        if (email != null && email.equals(userEmail)) {
-            // Set session attribute for current user's username
-            session.setAttribute("username", username);
-        %>
-            <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                <i class="bi bi-person-circle"></i><%= username %>
-            </a>    
-        <% 
-            break; // Exit the loop once the username is found
-        }
-    }
+        	    while (rs.next()) {
+        	        String username = rs.getString("username");
+        	        String email = rs.getString("email"); // Corrected variable name
 
-    rs.close();
-    stmt.close();
-    con.close();
-} catch(Exception e) {
-    e.printStackTrace();
-}
-%>
+        	        // Check if the current user's email matches the one in the session
+        	        if (userEmail != null && userEmail.equals(email)) { // Corrected variable name
+        	            // Set session attribute for current user's username
+        	            session.setAttribute("username", username);
+        	%>
+        	            <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+        	                <i class="bi bi-person-circle"></i><%= username %>
+        	            </a>    
+        	<% 
+        	            break; // Exit the loop once the username is found
+        	        }
+        	    }
+
+        	    rs.close();
+        	    stmt.close();
+        	    con.close();
+        	} catch(Exception e) {
+        	    e.printStackTrace();
+        	}
+        	%>
 
    
     <ul class="dropdown-menu">
@@ -228,7 +228,7 @@ try {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-   <%
+  <%
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet res = null;
@@ -238,12 +238,12 @@ try {
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
 
         // Get the email from the session
-        String email = (String) session.getAttribute("email");
+        String userEmail = (String) session.getAttribute("userEmail");
 
         // Prepare and execute the query to retrieve the Blob data based on email
         String sql = "SELECT image FROM image WHERE email = ?";
         pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, email);
+        pstmt.setString(1, userEmail); // Corrected from 'email' to 'userEmail'
         res = pstmt.executeQuery();
 
         // Check if there are results
@@ -273,8 +273,9 @@ try {
     }
 %>
 
+
      <div class="container text-center">
-      <% 
+     <% 
 try {
     Class.forName("com.mysql.cj.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
@@ -283,14 +284,14 @@ try {
     ResultSet rs = stmt.executeQuery("SELECT * FROM user");
 
     // Get the email from the session
-    String email = (String) session.getAttribute("email");
+    String userEmail = (String) session.getAttribute("userEmail");
 
     while (rs.next()) {
         String username = rs.getString("username");
-        String userEmail = rs.getString("email");
+        String email = rs.getString("email");
 
         // Check if the current user's email matches the one in the session
-        if (email != null && email.equals(userEmail)) {
+        if (userEmail != null && userEmail.equals(email)) {
             // Set session attribute for current user's username
             session.setAttribute("username", username);
 %>
@@ -312,51 +313,52 @@ try {
        <table class="table">
     <tbody>
         <% 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
 
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM user");
+    Statement stmt = con.createStatement();
+    ResultSet rs = stmt.executeQuery("SELECT * FROM user");
 
-            // Get the email from the session
-            String email = (String) session.getAttribute("email");
+    // Get the email from the session
+    String userEmail = (String) session.getAttribute("userEmail");
 
-            while (rs.next()) {
-                String username = rs.getString("username");
-                String mobileNumber = rs.getString("mobilenumber");
-                String userEmail = rs.getString("email");
+    while (rs.next()) {
+        String username = rs.getString("username");
+        String mobileNumber = rs.getString("mobilenumber");
+        String email = rs.getString("email");
 
-                // Check if the current user's email matches the one in the session
-                if (email != null && email.equals(userEmail)) {
-                    // Set session attributes for current user's details
-                    session.setAttribute("username", username);
-                    session.setAttribute("mobileNumber", mobileNumber);
-                %>
-                    <tr>
-                        <th scope="row">Username: </th>
-                        <td><%= username %></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Mobile No.: </th>
-                        <td><%= mobileNumber %></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Email: </th>
-                        <td><%= userEmail %></td>
-                    </tr>
-                <% 
-                    break; // Exit the loop once the user details are found
-                }
-            }
-
-            rs.close();
-            stmt.close();
-            con.close();
-        } catch(Exception e) {
-            e.printStackTrace();
+        // Check if the current user's email matches the one in the session
+        if (userEmail != null && userEmail.equals(email)) {
+            // Set session attributes for current user's details
+            session.setAttribute("username", username);
+            session.setAttribute("mobileNumber", mobileNumber);
+%>
+            <tr>
+                <th scope="row">Username: </th>
+                <td><%= username %></td>
+            </tr>
+            <tr>
+                <th scope="row">Mobile No.: </th>
+                <td><%= mobileNumber %></td>
+            </tr>
+            <tr>
+                <th scope="row">Email: </th>
+                <td><%= email %></td>
+            </tr>
+<% 
+            break; // Exit the loop once the user details are found
         }
-        %>
+    }
+
+    rs.close();
+    stmt.close();
+    con.close();
+} catch(Exception e) {
+    e.printStackTrace();
+}
+%>
+
     </tbody>
 </table>
 

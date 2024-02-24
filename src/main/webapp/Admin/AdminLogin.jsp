@@ -19,7 +19,7 @@
 .hero{
         height: 100%;
         width: 100%;
-        background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(second.jpg);
+        background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(image/New2.webp);
         background-position: center;
         background-size: cover;
         position: absolute;
@@ -161,32 +161,13 @@ font-size: 25px;
             </div>
 
 <!--Login-->
-<%
-    // Check if the message is not null before displaying it
-    String message = (String)session.getAttribute("message");
-    if (message != null) {
-    %>
-    <p style="color: white; text-align: center;"><%= message %></p>
-    <%
-        // Remove the message from the session
-        session.removeAttribute("message");
-    }
-    %>
-            <form action="Login_Action_JDBC.jsp" method="post" id="login" class="input-group">
-                <input type="email" name="email" class="input-field" placeholder="Email" required>
-                <input type="password" name="password" class="input-field" placeholder="Password" required>
-                <input type="checkbox" class="check-box"><span>Remember Password</span>
-                <button type="submit" class="submit-btn">Login</button>
-            </form>
-            
-            <%
-    String error = request.getParameter("error");
-    if (error != null && error.equals("1")) {
-%>
-    <script>alert("Incorrect email or password");</script>
-<%
-    }
-%>
+            <form action="JDBC_adminlogin_action.jsp" method="post" id="login" class="input-group">
+    <input type="email" name="email" class="input-field" placeholder="Email" required>
+    <input type="password" name="password" class="input-field" placeholder="Password" required>
+    <input type="checkbox" class="check-box"><span>Remember Password</span>
+    <button type="submit" class="submit-btn">Login</button>
+</form>
+       
         </div>
     </div>
 

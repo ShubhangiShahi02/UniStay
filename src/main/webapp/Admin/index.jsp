@@ -1,14 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
- <title>UniStay</title>
-    
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400&display=swap');
-  body{
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet"  href="style.css" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400&display=swap');
+   *{
+        margin: 0;
+        padding: 0;
+    }
+body{
   background:f1fbff;
   }
   .section-padding{
@@ -73,7 +79,8 @@ width: 100%;
  font-size: 12px;
  }
 }
- section .button {
+  
+section .button {
      margin: 16px 0;
  }
  
@@ -104,15 +111,10 @@ width: 100%;
  .portfolio .card{
  box-shadow: 15px 15px 40px rgba(0,0,0,0.15);
  }
-</style>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet"  href="style.css" >
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+  </style>
   </head>
-<body>
-<!-- Navbar/Banner -->
+  <body>
+    <!-- Navbar/Banner -->
    <%@include file="navbar.jsp" %>
    <div id="carouselExampleCaptions" class="carousel slide">
   <div class="carousel-indicators">
@@ -130,7 +132,7 @@ width: 100%;
       </div>
     </div>
     <div class="carousel-item">
-      <img src="image/new1.jpg" class="d-block w-100" alt="...">
+      <img src="image/second.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
         <h5>"Discover Your Student Sanctuary: Find Your Perfect Pad with Ease!"</h5>
         <p>Explore our user-friendly app to discover the perfect student sanctuary, 
@@ -139,7 +141,7 @@ width: 100%;
       </div>
     </div>
     <div class="carousel-item">
-      <img src="image/new3.jpg" class="d-block w-100" alt="...">
+      <img src="image/first.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
         <h5>"Unlock Your Student Experience: Explore, Compare, and Secure Your Ideal Digs Today!"</h5>
         <p>Our app empowers students to explore, compare, and secure their ideal accommodation swiftly,
@@ -157,8 +159,8 @@ width: 100%;
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
-<!-- about section -->
+   
+  <!-- about section -->
 
 <section id="about" class="about-section-padding">
 <div class="container">
@@ -327,7 +329,7 @@ amenities, and location for informed decision-making.</p>
 </div>
 <div class="col-md-12">
 <div class="mb-3">
-<textarea row="3" required class="form-control" placeholder="Your Query Here"></textarea>
+<textarea rows="3" required class="form-control" placeholder="Your Query Here"></textarea>
 </div>
 </div>
 <button class="btn btn-warning btn-lg btn-block mt-3 text-dark">Send Now</button>
@@ -350,6 +352,7 @@ amenities, and location for informed decision-making.</p>
  </p>
 </div>
 </footer> 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
 </html>
