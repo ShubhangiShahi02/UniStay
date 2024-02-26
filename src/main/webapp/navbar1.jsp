@@ -280,7 +280,7 @@ input[type="file"] {
 %>
 
 
-     <div class="container text-center">
+     <div class="container1 text-center">
      <% 
 try {
     Class.forName("com.mysql.cj.jdbc.Driver");

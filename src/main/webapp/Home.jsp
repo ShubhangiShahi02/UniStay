@@ -15,7 +15,7 @@
         padding: 0;
     }
 body{
-  background:f1fbff;
+  background:#dcdcdc;
   }
   .section-padding{
   padding:100px 0;
@@ -79,8 +79,210 @@ width: 100%;
  font-size: 12px;
  }
 }
-  
 
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2%;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 30px; /* Reduced border radius */
+  padding: 10px; /* Adjusted padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Normal box shadow */
+}
+
+.search-bar input {
+  background: white;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 10px; /* Adjusted padding */
+  font-size: 14px;
+  color: black;
+  backdrop-filter: blur(4px) saturate(180%);
+}
+
+
+::placeholder {
+  color: Black;
+}
+
+.search-bar button {
+  border: 0;
+  border-radius: 50%;
+  width: 38px; /* Adjusted button width */
+  height: 38px; /* Adjusted button height */
+  background: #ffd300;
+}
+
+footer{
+width: 100%;
+position: absolute;
+button: 0;
+background: linear-gradient(to right, #000000, #333333);
+color: #fff;
+padding: 100px 0 30px;
+border-top-left-radius: 125px;
+font-size: 13px;
+line-height: 20px;
+}
+
+.row{
+width: 85%;
+margin: auto;
+display: flex;
+flex-wrap: wrap;
+align-items: flex-start;
+justify-content: space-between;
+}
+
+.col{
+flex-basis: 25%;
+padding: 10px;
+}
+
+.col:nth-child(2), .col:nth-child(3){
+flex-basis: 20%;
+}
+
+.logo{
+width: 80px;
+margin-bottom: 30px;
+font-size: 30px;
+}
+
+.col h3{
+width: fit-content;
+margin-bottom: 15px;
+position: relative;
+}
+
+.email-id{
+width: fit-content;
+border-bottom: 1px solid #ccc;
+margin: 20px 0;
+}
+.row ul li{
+margin-bottom: 10px;
+}
+
+.row ul li a{
+text-decoration: none;
+color: #fff;
+}
+
+form{
+padding-bottom: 15px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid #ccc;
+margin-bottom: 50px;
+}
+
+form .bi{
+font-size: 18px;
+margin-right: 10px;
+}
+
+form input{
+width: 100;
+background: transparent;
+color: #ccc;
+border: 0;
+outline: none;
+}
+
+form button{
+background: transparent;
+border: 0;
+outline: none;
+cursor: pointer;
+}
+
+form button .bi{
+font-size: 16px;
+color: #fff;
+}
+
+form  ::placeholder{
+color: #ccc;
+}
+
+.social-icons i {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.hr{
+width: 90%;
+border: 0;
+border-bottom: 1px solid #ccc;
+margin: 20px auto;
+}
+
+.copyright{
+text-align: center;
+}
+
+.underline{
+width: 100%;
+height: 5px;
+background: #767676;
+border-radius: 3px;
+position: absolute;
+top: 30px;
+left: 0;
+overflow: hidden;
+}
+
+.underline span{
+width: 15px;
+height: 100%;
+background: #fff;
+border-radius: 3px;
+position: absolute;
+top: 0;
+left: 10px;
+animation: moving 2s linear infinite;
+}
+
+@keyframes moving{
+0%{
+left: -15px;
+}
+100%{
+left: 100%;
+}
+}
+
+@media (max-width: 700px){
+footer{
+bottom: unset;
+}
+.col{
+flex-basis: 100%;
+}
+
+.col:nth-child(2), .col:nth-child(3){
+flex-basis: 100%;
+}
+}
   </style>
   </head>
   <body>
@@ -129,11 +331,62 @@ width: 100%;
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-   
-  <div> 
- 
+
+   <!-- Search-bar -->
+  <div class="container"> 
+ <form action="" class="search-bar">
+ <input type="text" placeholder="Search" name="search">
+ <button type="submit"><i class="bi bi-search font-weight-bold fs-4 text-white"></i></button>
+ </form>
 </div>
 
+<!-- footer -->
+<footer>
+<div class="row">
+<div class="col"><div class="logo"><span class="logo text-warning">Uni<span class="text-white">Stay</span></span></div>
+<p>UniStay: User-friendly, high-quality platform, exceeding expectations,
+ innovative features, customer satisfaction, new industry standards.</p>
+</div>
+<div class="col">
+<h3>Office <div class="underline"><span></span></div></h3>
+<p>123 Main Street, Maple Road
+Anytown,Anystate 12345
+Country
+</p>
+<p class="email-id">unistay@gmail.com</p>
+<h4>+91 98765-54321</h4>
+</div>
+<div class="col">
+<h3 class="">Links<div class="underline"><span></span></div></h3>
+<ul>
+<li><a href="Home.jsp">Home</a></li>
+<li><a href="index.jsp\#about">About us</a></li>
+<li><a href="index.jsp\#services">Services</a></li>
+<li><a href="index.jsp\#portfolio">Portfolio</a></li>
+<li><a href="index.jsp\#contact">Contact</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Newsletter<div class="underline"><span></span></div></h3>
+<form action="" class="bg-transparent">
+<i class="bi bi-envelope"></i>
+<input type="email" placeholder="Enter your email id" required>
+<button type="submit"><i class="bi bi-arrow-right"></i></button>
+</form>
+<div class="social-icons mt-4">
+<i class="bi bi-facebook"></i>
+<i class="bi bi-twitter"></i>
+<i class="bi bi-whatsapp"></i>
+<i class="bi bi-pinterest"></i>
+              
+</div>
+</div>
+</div>
+<hr class="hr">
+<p class="copyright text-white">
+ UniStay &copy; 2024 - All Rights Reserved
+ </p>
+</footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
