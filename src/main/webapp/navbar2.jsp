@@ -9,7 +9,7 @@
 <title>navbar1</title>
 <style>
 .navbar {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .navbar-nav a {

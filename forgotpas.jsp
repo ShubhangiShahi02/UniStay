@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Reset Password</title>
+<title>Forgot Password</title>
 <link rel="stylesheet"  href="style.css" >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <style>
@@ -17,7 +17,7 @@
     .hero{
         height: 100%;
         width: 100%;
-        background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(image/New2.webp);
+        background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(image/second.jpg);
         background-position: center;
         background-size: cover;
         position: absolute;
@@ -26,7 +26,7 @@
 
     .form-box{
         width: 380px;
-        height: 448px;
+        height: 380px;
         position: relative;
         margin: 5% auto;
         background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), transparent;
@@ -115,7 +115,7 @@ span{
     position: absolute;
 }
     
-#reset{
+#login{
     left: 50px;
 }
 
@@ -139,13 +139,13 @@ padding-right: 30px;
 padding-top: 10px;
 color:  #ffd300;
 text-decoration: none;
-font-size: 20px;
+font-size: 25px;
 }
 
 .navbar span{
-margin:35px;
+margin:41px;
 text-decoration: none;
-font-size: 20px;
+font-size: 25px;
 }
 </style>
 </head>
@@ -159,33 +159,18 @@ font-size: 20px;
         <div class="form-box">
             <div class="button-box">
                 <div id="btn"></div>
-                <h3>Reset-Password</h3>
+                <h3>Forgot-Password</h3>
             </div>
             <div class="social-icons">
                 <i class="bi bi-facebook"></i>
                 <i class="bi bi-whatsapp"></i>
                 <i class="bi bi-google"></i>
             </div> 
-
-            <form action="Reset_password_action.jsp" method="post" id="reset" class="input-group">
+  <form action="Forgotpas_Action_JDBC.jsp" method="post" id="login" class="input-group">
                 <input type="email" name="email" class="input-field" placeholder="Email" required>
-                 <input type="text" name="reset_token" class="input-field" placeholder="Reset-Token" required>
-                <input type="password" name="password" class="input-field" placeholder="Password" required>
-                <button type="submit" class="submit-btn">Reset Password</button>
+                <button type="submit" class="submit-btn">Submit</button>
                 <a href="Login.jsp" class="text">Register</a>
             </form>
-             <%
-    // Check if the message is not null before displaying it
-    String message = (String)session.getAttribute("message");
-    if (message != null) {
-    %>
-    <p style="color: white; text-align: center;"><%= message %></p>
-    <%
-        // Remove the message from the session
-        session.removeAttribute("message");
-    }
-    %>
-        
         </div>
      
     </div>

@@ -4,7 +4,7 @@
 try {
     // Invalidate the session
     HttpSession sess = request.getSession(false); // Use "request.getSession(false)" instead of "session"
-    if (sess != null) { // Check if sess is not null
+    if (sess != null) { // Check if session is not null
         sess.invalidate();
     }
     
@@ -15,4 +15,3 @@ try {
     e.printStackTrace();
 }
 %>
-

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>UniStay | Admin Login</title>
+    <title>Edit and Delete | User details</title>
     <link rel="stylesheet"  href="style.css" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
@@ -113,7 +113,7 @@ span{
     position: absolute;
 }
     
-#login{
+#editProfileForm{
     left: 50px;
 }
 
@@ -151,22 +151,23 @@ font-size: 25px;
     <div class="hero">
     <div class="navbar">
     <div>
-    <a href="index.jsp">Uni<span>Stay</span></a>
+    <a href="Home.jsp">Uni<span>Stay</span></a>
     </div>
     </div>
         <div class="form-box">
             <div class="button-box">
                 <div id="btn"></div>
-                <button  type="button" class="toggle-btn" id="login-form-link" onclick="login()">Admin Login</button>
+                <button  type="button" class="toggle-btn" id="login-form-link" onclick="login()">Edit-Profile</button>
             </div>
 
 <!--Login-->
-            <form action="JDBC_adminlogin_action.jsp" method="post" id="login" class="input-group">
+            <form action="JDBC_Edit_action.jsp" method="post" id="editProfileForm" class="input-group">
     <input type="email" name="email" class="input-field" placeholder="Email" required>
-    <input type="password" name="password" class="input-field" placeholder="Password" required>
-    <input type="checkbox" class="check-box"><span>Remember Password</span>
-    <button type="submit" class="submit-btn">Login</button>
+    <input type="text" name="username" class="input-field" placeholder="User-Name" required>
+    <input type="text" name="mobileno" class="input-field" placeholder="Mobile Number" required>
+    <button type="submit" class="submit-btn">Edit details</button>
 </form>
+
        
         </div>
     </div>

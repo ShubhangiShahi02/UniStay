@@ -36,6 +36,10 @@ i{
 margin-right: 4px;
 font-size: 16px;
 }
+
+.nav-item .btn{
+margin-left: 10px;
+}
 </style>
 </head>
 <body>
@@ -48,23 +52,23 @@ font-size: 16px;
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white"  aria-current="page" href="Home_action.jsp">Home</a>
+          <a class="nav-link active text-white"  aria-current="page" href="Dashboard_action.jsp">DashBoard</a>
         </li>
        <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="#about">About</a>
+          <a class="nav-link text-white" aria-current="page" href="index.jsp\#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="#services">Services</a>
+          <a class="nav-link text-white" aria-current="page" href="index.jsp\#services">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="#portfolio">Portfolio</a>
+          <a class="nav-link text-white" aria-current="page" href="index.jsp\#portfolio">Portfolio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="#contact">Contact</a>
+          <a class="nav-link text-white" aria-current="page" href="index.jsp\#contact">Contact</a>
         </li>
-       <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="Login.jsp"><i class="bi bi-person-add"></i>Login</a></a>
-        </li>
+      <li class="nav-item">
+  <a class="btn btn-outline-light" href="Jdbc_logoutaction.jsp">Logout</a>
+   </li>
 
       </ul>
      
