@@ -19,11 +19,10 @@
     .hero{
         height: 100%;
         width: 100%;
-        background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(image/New2.webp);
+        background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(image/second.jpg);
         background-position: center;
         background-size: cover;
         position: absolute;
-       
     }
 
     .form-box{
@@ -161,13 +160,13 @@ padding-right: 30px;
 padding-top: 10px;
 color:  #ffd300;
 text-decoration: none;
-font-size: 20px;
+font-size: 25px;
 }
 
 .navbar span{
-margin:35px;
+margin:41px;
 text-decoration: none;
-font-size: 20px;
+font-size: 25px;
 }
 </style>
 

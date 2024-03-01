@@ -14,7 +14,7 @@ try {
     String hashedPassword = java.util.Base64.getEncoder().encodeToString(hashedPasswordBytes);
 
     // Establish database connection
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "unistayroot");
 
     // Prepare SQL query with parameterized statement to prevent SQL injection
     String query = "SELECT * FROM user WHERE email=? AND password=?";

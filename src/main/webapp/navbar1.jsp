@@ -167,7 +167,7 @@ input[type="file"] {
          <% 
          try {
         	    Class.forName("com.mysql.cj.jdbc.Driver");
-        	    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
+        	    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "unistayroot");
 
         	    Statement stmt = con.createStatement();
         	    ResultSet rs = stmt.executeQuery("SELECT * FROM user");
@@ -241,7 +241,7 @@ input[type="file"] {
     try {
         // Connect to the database
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "unistayroot");
 
         // Get the email from the session
         String userEmail = (String) session.getAttribute("userEmail");
@@ -284,7 +284,7 @@ input[type="file"] {
      <% 
 try {
     Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "unistayroot");
 
     Statement stmt = con.createStatement();
     ResultSet rs = stmt.executeQuery("SELECT * FROM user");
@@ -321,7 +321,7 @@ try {
         <% 
 try {
     Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "unistayroot");
 
     Statement stmt = con.createStatement();
     ResultSet rs = stmt.executeQuery("SELECT * FROM user");
