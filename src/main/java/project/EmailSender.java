@@ -42,7 +42,7 @@ public class EmailSender {
             // Set email body
             String emailBody = "Dear User,\n\n";
             emailBody += "Please click on the following link to reset your password:\n";
-            emailBody += "http://localhost:13627/UniStayPro/Reset_Password.jsp?token=" + resetToken + "\n\n";
+            emailBody += "http://localhost:13627/UniStayPro/user/Reset_Password.jsp?token=" + resetToken + "\n\n";
             emailBody += "please copy the token code to reset your password and put it into the input field of reset -token \n\n";
             emailBody += "Reset-Token Code: " + resetToken + "\n\n";
             emailBody += "If you didn't request a password reset, you can ignore this email.\n\n";

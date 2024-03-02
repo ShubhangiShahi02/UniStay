@@ -75,7 +75,7 @@ public class ProFileUploadServlet extends HttpServlet {
                 }
             }
             request.setAttribute("Message", message);
-            getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/user/Home.jsp").forward(request, response);
         }
     }
     

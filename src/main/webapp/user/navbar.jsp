@@ -63,7 +63,7 @@ font-size: 16px;
           <a class="nav-link text-white" aria-current="page" href="#contact">Contact</a>
         </li>
        <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="Login.jsp"><i class="bi bi-person-add"></i>Login</a></a>
+          <a class="nav-link text-white" aria-current="page" href="Login.jsp"><i class="bi bi-person-add"></i>Login</a>
         </li>
 
       </ul>

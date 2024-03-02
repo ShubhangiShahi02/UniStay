@@ -27,6 +27,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ProFileUploadServlet</servlet-name>
-    <url-pattern>/ProFileUploadServlet</url-pattern>
+    <url-pattern>/user/ProFileUploadServlet</url-pattern>
   </servlet-mapping>
 </web-app>

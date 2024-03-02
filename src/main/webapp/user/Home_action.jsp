@@ -13,7 +13,7 @@ if (userEmail != null && !userEmail.isEmpty()) { // Check if user email is not n
         window.alert("Welcome to Home Page");
     </script>
 <%
-    RequestDispatcher rd1 = request.getRequestDispatcher("/Home.jsp");
+    RequestDispatcher rd1 = request.getRequestDispatcher("Home.jsp");
     rd1.include(request, response);
 } else {
 %>
