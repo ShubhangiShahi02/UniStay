@@ -80,49 +80,6 @@ input[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-.file-link {
-  color: blue;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-input[type="file"] {
-  display: none;
-}
-
-.file-link {
-  color: #ffd300; /* Link color */
-  text-decoration: underline; /* Underline the text */
-  cursor: pointer; /* Show pointer cursor on hover */
-}
-
-#imageContainer {
-  background-color: #ddd; /* Set background color */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-header {
-  background: linear-gradient(to right, #5d4f08, #ffd300);
-}
-
-#imageContainer1 {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto;
-  background-size: cover;
-  background-position: center;
-}
-
-#previewImage {
-  max-width: 100%;
-  max-height: 100%;
-  display: none;
-}
-
 .input-field {
   width: 100%;
   padding: 10px 0;
@@ -135,7 +92,6 @@ input[type="file"] {
   background: transparent;
   color: white;
 }
-
 </style>
 </head>
 <body>
@@ -184,7 +140,7 @@ input[type="file"] {
         	            // Set session attribute for current user's username
         	            session.setAttribute("username", username);
         	%>
-        	            <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+        	            <a class="nav-link text-white" href="MyProfile.jsp" role="button" aria-expanded="false">
         	                <i class="bi bi-person-circle"></i><%= username %>
         	            </a>    
         	<% 
@@ -224,219 +180,6 @@ input[type="file"] {
 </div>
 </div>
 </nav>
-
-<!-- My Profile-->
-<div class="modal fade" id="profile-Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-warning text-dark">
-       <h1 id="ModalLabel" class="fs-5 d-flex justify-content-center text-white">UniStay</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-  <%
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet res = null;
-    try {
-        // Connect to the database
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
-
-        // Get the email from the session
-        String userEmail = (String) session.getAttribute("userEmail");
-
-        // Prepare and execute the query to retrieve the Blob data based on email
-        String sql = "SELECT image FROM image WHERE email = ?";
-        pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, userEmail); // Corrected from 'email' to 'userEmail'
-        res = pstmt.executeQuery();
-
-        // Check if there are results
-        if (res.next()) {
-            // Get the Blob data from the result set
-            byte[] blobData = res.getBytes("image");
-
-            // Convert the Blob data to Base64
-            String base64Image = Base64.getEncoder().encodeToString(blobData);
-
-            // Set the background image of the container div
-            out.println("<div id=\"imageContainer1\" style=\"background-image: url('data:image/jpeg;base64," + base64Image + "')\"></div>");
-        } else {
-            out.println("No image found.");
-        }
-    } catch (Exception e) {
-        e.printStackTrace();
-    } finally {
-        // Close resources
-        try {
-            if (res != null) res.close();
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-%>
-
-
-     <div class="container1 text-center">
-     <% 
-try {
-    Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
-
-    Statement stmt = con.createStatement();
-    ResultSet rs = stmt.executeQuery("SELECT * FROM user");
-
-    // Get the email from the session
-    String userEmail = (String) session.getAttribute("userEmail");
-
-    while (rs.next()) {
-        String username = rs.getString("username");
-        String email = rs.getString("email");
-
-        // Check if the current user's email matches the one in the session
-        if (userEmail != null && userEmail.equals(email)) {
-            // Set session attribute for current user's username
-            session.setAttribute("username", username);
-%>
-            <h5 class="modal-title"><%= username %></h5>
-<% 
-            break; // Exit the loop once the username is found
-        }
-    }
-
-    rs.close();
-    stmt.close();
-    con.close();
-} catch(Exception e) {
-    e.printStackTrace();
-}
-%>
-
-     </div>
-       <table class="table">
-    <tbody>
-        <% 
-try {
-    Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
-
-    Statement stmt = con.createStatement();
-    ResultSet rs = stmt.executeQuery("SELECT * FROM user");
-
-    // Get the email from the session
-    String userEmail = (String) session.getAttribute("userEmail");
-
-    while (rs.next()) {
-        String username = rs.getString("username");
-        String mobileNumber = rs.getString("mobilenumber");
-        String email = rs.getString("email");
-
-        // Check if the current user's email matches the one in the session
-        if (userEmail != null && userEmail.equals(email)) {
-            // Set session attributes for current user's details
-            session.setAttribute("username", username);
-            session.setAttribute("mobileNumber", mobileNumber);
-%>
-            <tr>
-                <th scope="row">Username: </th>
-                <td><%= username %></td>
-            </tr>
-            <tr>
-                <th scope="row">Mobile No.: </th>
-                <td><%= mobileNumber %></td>
-            </tr>
-            <tr>
-                <th scope="row">Email: </th>
-                <td><%= email %></td>
-            </tr>
-<% 
-            break; // Exit the loop once the user details are found
-        }
-    }
-
-    rs.close();
-    stmt.close();
-    con.close();
-} catch(Exception e) {
-    e.printStackTrace();
-}
-%>
-
-    </tbody>
-</table>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a type="button" class="btn text-white" style="background:linear-gradient(to right, #5d4f08, #ffd300); padding: 10px 20px; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;" href="EditUserProfile.jsp">Edit Profile</a>
-   <a type="button" class="btn text-white" style="background:linear-gradient(to right, #5d4f08, #ffd300); padding: 10px 20px; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;" href="DeleteAccount.jsp">Delete Account</a>
-
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-  <!-- Upload Profile pic -->
-  
- <div class="modal fade" id="Upload-Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-warning text-dark">
-        <h5 id="ModalLabel" class="modal-title fs-5 d-flex justify-content-center text-white">UniStay</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="text-center">
-          <div id="imageContainer" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto;">
-            <img id="previewImage" style="max-width: 100%; max-height: 100%; display: none;">
-          </div>
-          
-          <br>
-          
-          <form id="uploadForm" action="ProFileUploadServlet" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
-    <label for="profilePic" class="file-link" id="fileLabel">Choose Profile Picture</label>
-    <input type="file" id="profilePic" name="profilePic" style="display: none;" onchange="displayFile()">
-    <br>    
-    <input type="submit" id="submitBtn" value="Upload" style="background:linear-gradient(to right, #5d4f08, #ffd300); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-
-</form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-    function validateForm() {
-        // Disable submit button to prevent multiple submissions
-        document.getElementById("submitBtn").disabled = true;
-        return true; // You can perform additional validation here if needed
-    }
-
-    function displayFile() {
-        var input = document.getElementById('profilePic');
-        var previewImage = document.getElementById('previewImage');
-
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            
-            reader.onload = function(e) {
-                previewImage.src = e.target.result;
-                previewImage.style.display = 'block';
-            }
-            
-            reader.readAsDataURL(input.files[0]);
-        } else {
-            previewImage.style.display = 'none';
-        }
-    }
-</script>
 
 
 </body>
