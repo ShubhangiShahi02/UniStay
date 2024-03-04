@@ -14,15 +14,18 @@
         * {
             margin: 0;
             padding: 0;
+            border: none;
+            outline: none;
             box-sizing: border-box;
         }
 
-        .header {
+        body{
             width: 100%;
             height: 100vh;
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(image/New2.webp);
             background-position: center;
             background-size: cover;
+            display: flex;
         }
 
         .side-nav {
@@ -40,6 +43,12 @@
             flex-direction: column;
             transition: width 0.5s;
         }
+
+.nav{
+font-size: 20px;
+align-items: center;
+margin-left: 5px;
+}
 
         .user {
             display: flex;
@@ -92,12 +101,18 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.5s ease-in-out;
         }
 
         ul li i {
             font-size: 20px;
             margin-right: 0px;
         }
+
+ ul li:hover{
+ text-decoration:underline;
+ }
 
         ul li a {
             white-space: nowrap;
@@ -135,6 +150,8 @@
            .side-nav:hover ul li{
            justify-content: flex-start;
            }
+           
+           
     </style>
 </head>
 <body>
@@ -142,6 +159,7 @@
 <!-- header -->
 <div class="header">
     <div class="side-nav">
+      <a class="nav navbar-brand text-white" href="Home.jsp" ><span class="text-warning">Uni</span>Stay</a>
         <div class="user">
             <div class="user-img">
                 <%
@@ -204,14 +222,17 @@
                         while (rs.next()) {
                             String username = rs.getString("username");
                             String email = rs.getString("email");
+                            String mobileNumber = rs.getString("mobilenumber");
 
                             // Check if the current user's email matches the one in the session
                             if (userEmail != null && userEmail.equals(email)) {
                                 // Set session attribute for current user's username
                                 session.setAttribute("username", username);
+                                session.setAttribute("mobileNumber", mobileNumber);
                 %>
                                 <h5 class="modal-title"><%= username%></h5>
                                 <p class="modal-title"><%= email%></p>
+                                <p class="modal-title">+<%= mobileNumber %></p>
                 <%
                                 break; // Exit the loop once the username is found
                             }
@@ -226,9 +247,9 @@
                 %>
             </div>
         </div>
-        <ul>
-            <li><i class="bi bi-pie-chart"></i> <a href="#">DashBoard</a></li>
-            <li><i class="bi bi-bar-chart"></i> <a href="#">Report</a></li>
+        <ul class="bar">
+            <li><i class="bi bi-pencil-square"></i> <a href="EditUserProfile.jsp">Edit your profile</a></li>
+            <li><i class="bi bi-trash"></i> <a href="DeleteAccount.jsp">Delete Account</a></li>
             <li><i class="bi bi-gift"></i> <a href="#">Rewards</a></li>
             <li><i class="bi bi-chat-dots"></i> <a href="#">Messages</a></li>
             <li><i class="bi bi-suitcase-lg"></i> <a href="#">Our Bookings</a></li>
@@ -240,7 +261,20 @@
             <li><i class="bi bi-box-arrow-right"></i> <a href="logout_action.jsp">Logout</a></li>
         </ul>
     </div>
+    
+    <!-- Upload Profile pic -->
+<div class="main--content">
+<div class="header--wrapper">
+<div class="header--title">
+<span class="text-white">unistay</span>
+
 </div>
+</div>
+</div>
+</div>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

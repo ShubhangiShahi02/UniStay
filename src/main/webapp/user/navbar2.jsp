@@ -206,10 +206,6 @@ input[type="file"] {
           <a class="nav-link"   href="#!" data-bs-toggle="modal" data-bs-target="#profile-Modal">My Profile</a>
         </li>
         
-        <li class="nav-item">
-          <a class="nav-link"   href="#!" data-bs-toggle="modal" data-bs-target="#Upload-Modal">Upload Profile Pic</a>
-        </li>
-        
       <li><hr class="dropdown-divider"></li>
       <li class="nav-item"><a class="nav-link " aria-current="page" href="logout_action.jsp">Logout</a></li>
     </ul>
@@ -371,72 +367,12 @@ try {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a type="button" class="btn text-white" style="background:linear-gradient(to right, #5d4f08, #ffd300); padding: 10px 20px; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;" href="EditUserProfile.jsp">Edit Profile</a>
-   <a type="button" class="btn text-white" style="background:linear-gradient(to right, #5d4f08, #ffd300); padding: 10px 20px; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;" href="DeleteAccount.jsp">Delete Account</a>
-
 
       </div>
     </div>
   </div>
 </div>
 
-
-
-  <!-- Upload Profile pic -->
-  
- <div class="modal fade" id="Upload-Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-warning text-dark">
-        <h5 id="ModalLabel" class="modal-title fs-5 d-flex justify-content-center text-white">UniStay</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="text-center">
-          <div id="imageContainer" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto;">
-            <img id="previewImage" style="max-width: 100%; max-height: 100%; display: none;">
-          </div>
-          
-          <br>
-          
-          <form id="uploadForm" action="ProFileUploadServlet" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
-    <label for="profilePic" class="file-link" id="fileLabel">Choose Profile Picture</label>
-    <input type="file" id="profilePic" name="profilePic" style="display: none;" onchange="displayFile()">
-    <br>    
-    <input type="submit" id="submitBtn" value="Upload" style="background:linear-gradient(to right, #5d4f08, #ffd300); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-
-</form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-    function validateForm() {
-        // Disable submit button to prevent multiple submissions
-        document.getElementById("submitBtn").disabled = true;
-        return true; // You can perform additional validation here if needed
-    }
-
-    function displayFile() {
-        var input = document.getElementById('profilePic');
-        var previewImage = document.getElementById('previewImage');
-
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            
-            reader.onload = function(e) {
-                previewImage.src = e.target.result;
-                previewImage.style.display = 'block';
-            }
-            
-            reader.readAsDataURL(input.files[0]);
-        } else {
-            previewImage.style.display = 'none';
-        }
-    }
-</script>
 
 
 </body>
