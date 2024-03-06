@@ -167,7 +167,7 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.3);
             backdrop-filter: blur(5px);
             border-radius: 10px;
             padding: 10px 2rem;
@@ -204,6 +204,80 @@
         .search-box i:hover{
             transform: scale(1.2);
         }
+        
+ /* card container */
+ .card--container{
+ background:rgba(0,0,0,0.3); 
+ backdrop-filter: blur(5px);
+ padding: 2rem;
+ border-radius: 10px;
+ }
+ 
+ .card--wrapper{
+ display: flex;
+ flex-wrap: wrap;
+ gap: 1rem;
+ }
+ 
+ .main--title{
+ padding-bottom: 10px;
+ font-size: 20px;
+ }
+ 
+ .upload--card{
+ background-color: rgba(0,0,0,0.7);
+ border-radius: 10px;
+ padding: 1.2rem;
+ width: 290px;
+ height: 260px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ transition: all 0.5s ease-in-out;
+ }
+ 
+  .upload--card:hover{
+  transform: translateY(-5px);
+  }
+ 
+ form {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: white
+}
+ #imageContainer {
+  background-color: #ddd; /* Set background color */
+  display: flex;
+}
+ 
+ .file-link {
+  color: #ffd300; /* Link color */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.file-link:hover{
+ text-decoration: underline; /* Underline the text */
+}
+
+.card--header{
+diaplay: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.upload{
+display: flex;
+flex-direction: column;
+}
+
+.title{
+font-size: 15px;
+font-weight: 200;
+text-align: center;
+}
+
     </style>
 </head>
 <body>
@@ -241,7 +315,7 @@
                         // Set the background image of the container div
                         out.println("<div id=\"imageContainer1\" style=\"background-image: url('data:image/jpeg;base64," + base64Image + "')\"></div>");
                     } else {
-                        out.println("No image found.");
+                        out.println("upload profile");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -282,7 +356,7 @@
             %>
                             <h5 class="modal-title"><%= username%></h5>
                             <p class="modal-title"><%= email%></p>
-                            <p class="modal-title">+<%= mobileNumber %></p>
+                            <p class="modal-title">+91 <%= mobileNumber %></p>
             <%
                             break; // Exit the loop once the username is found
                         }
@@ -326,7 +400,36 @@
             </div>
         </div>
     </div>
+    
+    <div class="card--container">
+    <h3 class="main--title">Profile</h3>
+    <div class="card--wrapper">
+    <div class="upload--card">
+    <div class="card--header">
+    <div class="upload">
+    <span class="title"> Upload Profile</span>
+     <div class="text-center">    
+          <form id="uploadForm" action="ProFileUploadServlet" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+   <div id="imageContainer" style="width: 90px; height: 90px; border-radius: 50%; overflow: hidden; margin: 0 auto;">
+            <img id="previewImage" style="max-width: 100%; max-height: 100%; display: none;">
+          </div>
+          
+          <br>
+    <label for="profilePic" class="file-link" id="fileLabel">Choose Profile Picture</label>
+    <input type="file" id="profilePic" name="profilePic" style="display: none;" onchange="displayFile()">
+    <br>    
+    <input type="submit" id="submitBtn" value="Upload" style="background:linear-gradient(to right, #5d4f08, #ffd300); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+
+</form>
+        </div>
+    </div>
+      
+    </div>
+    </div>
+    </div>   
+    </div>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script>
@@ -340,6 +443,32 @@
     sideNav.addEventListener('mouseleave', () => {
         mainContent.style.marginLeft = '110px'; // Adjust as per your side nav width
     });
+</script>
+
+<script>
+    function validateForm() {
+        // Disable submit button to prevent multiple submissions
+        document.getElementById("submitBtn").disabled = true;
+        return true; // You can perform additional validation here if needed
+    }
+
+    function displayFile() {
+        var input = document.getElementById('profilePic');
+        var previewImage = document.getElementById('previewImage');
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function(e) {
+                previewImage.src = e.target.result;
+                previewImage.style.display = 'block';
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            previewImage.style.display = 'none';
+        }
+    }
 </script>
 </body>
 </html>
