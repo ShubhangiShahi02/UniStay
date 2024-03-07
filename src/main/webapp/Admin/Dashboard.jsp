@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.sql.*, java.awt.image.BufferedImage, javax.imageio.ImageIO, java.io.ByteArrayInputStream, java.util.Base64" %>
 <!doctype html>
 <html lang="en">
   <head>
@@ -122,6 +123,10 @@ flex-wrap: wrap;
 color: #EBAB00
 }
 
+.header--title a{
+font-size: 20px;
+}
+
 .user-info{
 display: flex;
 align-items: center;
@@ -153,7 +158,80 @@ transition: all 0.5s ease-out;
 transform: scale(1.2);
 }
 
+/* card container */
+ .card--container{
+ background:rgba(0,0,0,0.3); 
+ backdrop-filter: blur(5px);
+ padding: 2rem;
+ border-radius: 10px;
+ }
+ 
+ .card--wrapper{
+ display: flex;
+ flex-wrap: wrap;
+ gap: 1rem;
+ }
+ 
+.main--title{
+ padding-bottom: 10px;
+ font-size: 20px;
+ }
+ 
+ .user--card{
+ background-color: rgba(0,0,0,0.7);
+ border-radius: 10px;
+ padding: 1.2rem;
+ width: 290px;
+ height: 150px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ transition: all 0.5s ease-in-out;
+ }
+ 
+ .user--card:hover{
+ transform: translateY(-5px);
+ }
+ 
+.card--header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
 
+.user{
+display: flex;
+flex-direction: column;
+}
+
+.title{
+font-size: 15px;
+font-weight: 200;
+}
+
+.user-value{
+font-size: 28px;
+font-family: "Courier New", Courier, monospace;
+font-weight: 600;
+}
+
+.icon{
+color: #000;
+padding: 0.4rem;
+height: 60px;
+width: 60px;
+text-align: center;
+border-radius: 50%;
+font-size: 2rem;
+background: #fff;
+}
+
+.card-details{
+font-size: 18px;
+color: #dcdcdc;
+font-family: "Courier New", Courier, monospace;
+}
   </style>
   </head>
   <body>
@@ -233,7 +311,48 @@ transform: scale(1.2);
              <img src="image/unistay-high-resolution-logo.png" alt="...">
         </div>
     </div>
+    
+    <!-- card-container -->
+  <div class="card--container">
+  <h3 class="main--title">Status</h3>
+  <div class="card--wrapper">
+  <div class="user--card">
+  <div class="card--header">
+  <div class="user">
+  <span class="title">User Login Data</span>
+  <span class="user-value">
+   <%
+        String url = "jdbc:mysql://localhost:3306/unistay"; // Replace "your_database_name" with your actual database name
+        String username = "root"; // Replace "your_username" with your actual database username
+        String password = "root"; // Replace "your_password" with your actual database password
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver"); // Load the MySQL JDBC driver
+            Connection connection = DriverManager.getConnection(url, username, password);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT COUNT(*) FROM user"); // Replace "user" with your actual table name
+
+            if (resultSet.next()) {
+                int count = resultSet.getInt(1);
+    %>
+               <%= count %>
+    <%
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    %>
+  </span>
   </div>
+  <i class="bi bi-people-fill icon"></i>
+  </div>
+  <span class="card-details">Registered User</span>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
