@@ -224,6 +224,10 @@
  font-size: 20px;
  }
  
+ .header--title{
+color: #EBAB00;
+}
+ 
  .upload--card{
  background-color: rgba(0,0,0,0.7);
  border-radius: 10px;

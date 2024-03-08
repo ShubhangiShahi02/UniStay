@@ -120,7 +120,7 @@ flex-wrap: wrap;
 }
 
 .header--title{
-color: #EBAB00
+color: #EBAB00;
 }
 
 .header--title a{
@@ -181,7 +181,7 @@ transform: scale(1.2);
  background-color: rgba(0,0,0,0.7);
  border-radius: 10px;
  padding: 1.2rem;
- width: 290px;
+ width: 300px;
  height: 150px;
  display: flex;
  flex-direction: column;
@@ -231,6 +231,63 @@ background: #fff;
 font-size: 18px;
 color: #dcdcdc;
 font-family: "Courier New", Courier, monospace;
+}
+
+/* user detail table */
+.tabular--wrapper{
+ background: rgba(0,0,0,0.3);
+ backdrop-filter: blur(5px);
+ margin-top: 1rem;
+ border-radius: 10px;
+ padding: 2rem;
+}
+
+.table-container{
+width: 100%;
+}
+
+table{
+width: 100%;
+border-collapse: collapse;
+}
+
+thead{
+background-color: rgba(0,0,0,0.7);
+color: #fff;
+}
+
+th{
+padding: 15px;
+text-align: left;
+}
+
+tbody{
+background-color: rgba(0,0,0,0.2);
+}
+
+td {
+padding: 15px;
+font-size: 14px;
+}
+
+tr:nth-child(even){
+background: rgba(0,0,0,0.5);
+}
+
+tfoot{
+background-color: rgba(0,0,0,0.9);
+font-weight: bold;
+color: #fff;
+}
+
+tfoot td{
+padding: 15px;
+}
+
+.table-container button{
+color: green;
+background: none;
+cursor: pointer;
 }
   </style>
   </head>
@@ -323,12 +380,12 @@ font-family: "Courier New", Courier, monospace;
   <span class="user-value">
    <%
         String url = "jdbc:mysql://localhost:3306/unistay"; // Replace "your_database_name" with your actual database name
-        String username = "root"; // Replace "your_username" with your actual database username
+        String username1 = "root"; // Replace "your_username" with your actual database username
         String password = "root"; // Replace "your_password" with your actual database password
 
         try {
             Class.forName("com.mysql.jdbc.Driver"); // Load the MySQL JDBC driver
-            Connection connection = DriverManager.getConnection(url, username, password);
+            Connection connection = DriverManager.getConnection(url, username1, password);
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT COUNT(*) FROM user"); // Replace "user" with your actual table name
 
@@ -348,9 +405,129 @@ font-family: "Courier New", Courier, monospace;
   </div>
   <span class="card-details">Registered User</span>
   </div>
+  
+  <!-- Property listing no. -->
+  <div class="user--card">
+  <div class="card--header">
+  <div class="user">
+  <span class="title">Property Listing</span>
+  <span class="user-value">
+   0
+  </span>
+  </div>
+  <i class="bi bi-list-stars icon"></i>
+  </div>
+  <span class="card-details">Registered Properties</span>
+  </div>
+  
+   
+  <!-- Booking Status -->
+  <div class="user--card">
+  <div class="card--header">
+  <div class="user">
+  <span class="title">Total No. Of Bookings</span>
+  <span class="user-value">
+   0
+  </span>
+  </div>
+  <i class="bi bi-building-add icon"></i>
+  </div>
+  <span class="card-details">Booking Status</span>
+  </div>
+  
+  <!-- Booking Status -->
+  <div class="user--card">
+  <div class="card--header">
+  <div class="user">
+  <span class="title">Messages</span>
+  <span class="user-value">
+   0
+  </span>
+  </div>
+  <i class="bi bi-chat-dots-fill icon"></i>
+  </div>
+  <span class="card-details">For Enquiry </span>
   </div>
   </div>
   </div>
+  
+  <!-- table -->
+  <div class="tabular--wrapper">
+  <h3 class="main--title">User's Details</h3>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Contact Number</th>
+          <th>Email id</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% 
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
+
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM user");
+
+            while (rs.next()) {
+                String username = rs.getString("username");
+                String mobileNumber = rs.getString("mobilenumber");
+                String email = rs.getString("email");
+        %>
+                <tr>
+                    <td><%= username %></td>
+                    <td><%= mobileNumber %></td>
+                    <td><%= email %></td>
+                    <td><button>Edit</button></td>
+                </tr>
+        <% 
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        %>
+      </tbody>
+      <tfoot>
+      <tr>
+      <td  colspan="4">Total:  <%
+        String url1 = "jdbc:mysql://localhost:3306/unistay"; // Replace "your_database_name" with your actual database name
+        String username2 = "root"; // Replace "your_username" with your actual database username
+        String password1 = "root"; // Replace "your_password" with your actual database password
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver"); // Load the MySQL JDBC driver
+            Connection connection = DriverManager.getConnection(url1, username2, password1);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT COUNT(*) FROM user"); // Replace "user" with your actual table name
+
+            if (resultSet.next()) {
+                int count = resultSet.getInt(1);
+    %>
+               <%= count %>
+    <%
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    %></td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+  </div>
+  
+  
+  
+  
   
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
