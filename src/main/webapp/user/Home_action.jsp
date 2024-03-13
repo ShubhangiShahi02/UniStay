@@ -19,7 +19,7 @@ if (userEmail != null && !userEmail.isEmpty()) { // Check if user email is not n
 %>
     <script>
         window.alert("Login to open Home Page");
-        window.location.href = "index.jsp"; // Redirect to login page if not logged in
+        window.location.href = "Login.jsp"; // Redirect to login page if not logged in
     </script>
 <%
 }

@@ -357,7 +357,7 @@ cursor: pointer;
   <div class="main--content">
   <div class="header--wrapper">
         <div class="header--title">
-            <a class="nav navbar-brand text-white" href="Home.jsp" ><span class="text-warning">Uni</span>Stay</a>
+            <a class="nav navbar-brand text-white" href="index.jsp" ><span class="text-warning">Uni</span>Stay</a>
             <h3>Admin Dashboard</h3>
         </div>
         <div class="user-info">
