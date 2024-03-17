@@ -321,7 +321,7 @@ margin-bottom: 10px;
       </ul>
     </div>
   </div>
-  <form class="check">
+  <form class="check" action="" method="post">
     <h3>Let's get you started</h3>
     <h5>You are:</h5>
     <input type="checkbox" class="btn-check" id="owner" data-group="you_are" autocomplete="off" onchange="toggleCheck(this, 'you_are')">
@@ -340,7 +340,7 @@ margin-bottom: 10px;
     <h5>Your Email-id:</h5>
     <input type="email" name="email" class="input-field" placeholder="Email" required>
    <div class="d-inline-flex p-2"> <i class="bi bi-envelope-at"> </i>Enter your Email to get enquiries from Buyer/Tenant</div>
-    <button type="button" class="btn btn-warning">Start Now</button>
+    <button type="submit" class="btn btn-warning">Start Now</button>
   </form>
 </div>
   
