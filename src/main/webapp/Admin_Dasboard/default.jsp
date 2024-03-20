@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Dashboard</title>
+        <title>Ready Bootstrap Dashboard</title>
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -73,7 +73,7 @@
                                                 <div class="notif-content">
                                                     <span class="block">
                                                     </span>
-                                                    <span class="time">12</span> 
+                                                    <span class="time">12 minutes ago</span> 
                                                 </div>
                                             </a>
                                             <a href="#">
@@ -82,18 +82,18 @@
                                                 </div>
                                                 <div class="notif-content">
                                                     <span class="block">
-                                                        Message
+                                                        Reza send messages to you
                                                     </span>
-                                                    <span class="time">12</span> 
+                                                    <span class="time">12 minutes ago</span> 
                                                 </div>
                                             </a>
                                             <a href="#">
                                                 <div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
                                                 <div class="notif-content">
                                                     <span class="block">
-                                                        Property rented
+                                                        Farrah liked Admin
                                                     </span>
-                                                    <span class="time">17</span> 
+                                                    <span class="time">17 minutes ago</span> 
                                                 </div>
                                             </a>
                                         </div>
@@ -104,22 +104,22 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span >User</span></span> </a>
+                                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span >Hizrian</span></span> </a>
                                 <ul class="dropdown-menu dropdown-user">
                                     <li>
                                         <div class="user-box">
                                             <div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
                                             <div class="u-text">
                                                 <h4>User</h4>
-                                                <p class="text-muted">info@unistay.com</p><a href="profile.jsp" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                                <p class="text-muted">hello@themekita.com</p><a href="profile.jsp" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                             </div>
                                         </li>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
-                                        <a class="dropdown-item" href="#"></i>Bookings</a>
-                                        <a class="dropdown-item" href="#"><i class="ti-email"></i>Inbox</a>
+                                        <a class="dropdown-item" href="#"></i> My Balance</a>
+                                        <a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#"><i class="ti-settings"></i>Account Setting</a>
+                                        <a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
                                     </ul>
@@ -129,7 +129,6 @@
                         </div>
                     </nav>
                 </div>
-                <!-- sidebar -->
                 <div class="sidebar">
                     <div class="scrollbar-inner sidebar-wrapper">
                         <div class="user">
@@ -139,7 +138,7 @@
                             <div class="info">
                                 <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                                     <span>
-                                        User
+                                        Hizrian
                                         <span class="user-level">Administrator</span>
                                         <span class="caret"></span>
                                     </span>
@@ -154,6 +153,11 @@
                                             </a>
                                         </li>
                                         <li>
+                                            <a href="#edit">
+                                                <span class="link-collapse">Edit Profile</span>
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a href="#settings">
                                                 <span class="link-collapse">Settings</span>
                                             </a>
@@ -162,7 +166,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- sidebar -->
                         <ul class="nav">
                             <li class="nav-item active">
                                 <a href="index.jsp">
@@ -179,9 +182,16 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a href="forms.jsp">
+                                    <i class="la la-keyboard-o"></i>
+                                    <p>Forms</p>
+                                    <span class="badge badge-count">50</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="tables.jsp">
                                     <i class="la la-th"></i>
-                                    <p>Tabular representation</p>
+                                    <p>Tables</p>
                                     <span class="badge badge-count">6</span>
                                 </a>
                             </li>
@@ -189,20 +199,31 @@
                                 <a href="notifications.jsp">
                                     <i class="la la-bell"></i>
                                     <p>Notifications</p>
-                                    <span class="badge badge-count">3</span>
+                                    <span class="badge badge-success">3</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="">
-                                    <i class="pending_verification.jsp"></i>
-                                    <p>Pending Verifications</p>
-                                    <span class="badge badge-success">3</span>
+                                <a href="typography.jsp">
+                                    <i class="la la-font"></i>
+                                    <p>Typography</p>
+                                    <span class="badge badge-danger">25</span>
                                 </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="icons.jsp">
+                                    <i class="la la-fonticons"></i>
+                                    <p>Icons</p>
+                                </a>
+                            </li>
+                            <li class="nav-item update-pro">
+                                <button  data-toggle="modal" data-target="#modalUpdate">
+                                    <i class="la la-hand-pointer-o"></i>
+                                    <p>Update To Pro</p>
+                                </button>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <!-- Dashboard MainPage -->
                 <div class="main-panel">
                     <div class="content">
                         <div class="container-fluid">
@@ -239,7 +260,7 @@
                                                 <div class="col-7 d-flex align-items-center">
                                                     <div class="numbers">
                                                         <p class="card-category">Sales</p>
-                                                        <h4 class="card-title">₹5600</h4>
+                                                        <h4 class="card-title">$ 1,345</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -257,8 +278,8 @@
                                                 </div>
                                                 <div class="col-7 d-flex align-items-center">
                                                     <div class="numbers">
-                                                        <p class="card-category">Users Active</p>
-                                                        <h4 class="card-title">23</h4>
+                                                        <p class="card-category">Subscribers</p>
+                                                        <h4 class="card-title">1303</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -276,8 +297,8 @@
                                                 </div>
                                                 <div class="col-7 d-flex align-items-center">
                                                     <div class="numbers">
-                                                        <p class="card-category">Bookings Completed</p>
-                                                        <h4 class="card-title">12</h4>
+                                                        <p class="card-category">Order</p>
+                                                        <h4 class="card-title">576</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -376,8 +397,7 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- <div class="col-md-9">
+                                <div class="col-md-9">
                                     <div class="card">
                                         <div class="card-header">
                                             <h4 class="card-title">World Map</h4>
@@ -392,10 +412,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div> -->
-
+                                </div>
                             </div>
-                            <!-- Row cards -->
                             <div class="row row-card-no-pd">
                                 <div class="col-md-4">
                                     <div class="card">
@@ -412,7 +430,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="col-md-5">
+                                <div class="col-md-5">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="progress-card">
@@ -453,9 +471,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div> -->
-
-                                <!-- <div class="col-md-3">
+                                </div>
+                                <div class="col-md-3">
                                     <div class="card card-stats">
                                         <div class="card-body">
                                             <p class="fw-bold mt-1">Statistic</p>
@@ -488,10 +505,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
-                            
-                            <!-- <div class="row">
+                            <div class="row">
                                 <div class="col-md-4">
                                     <div class="card">
                                         <div class="card-header">
@@ -515,7 +531,7 @@
                                             <div id="salesChart" class="chart"></div>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                                 <div class="col-md-6">
                                     <div class="card">
                                         <div class="card-header ">
@@ -526,24 +542,24 @@
                                             <table class="table table-head-bg-success table-striped table-hover">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">No.</th>
+                                                        <th scope="col">#</th>
                                                         <th scope="col">First</th>
                                                         <th scope="col">Last</th>
-                                                        <th scope="col">Owner/Tenant</th>
+                                                        <th scope="col">Handle</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td>1</td>
-                                                        <td>Aditya</td>
-                                                        <td>Tiwari</td>
-                                                        <td>Tenant</td>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@mdo</td>
                                                     </tr>
                                                     <tr>
                                                         <td>2</td>
-                                                        <td>Shubhangi</td>
-                                                        <td>Shahi</td>
-                                                        <td>Owner</td>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
                                                     </tr>
                                                     <tr>
                                                         <td>3</td>
@@ -678,30 +694,29 @@
                             </div>
                         </div>
                     </div>
-                    <!-- footer -->
                     <footer class="footer">
                         <div class="container-fluid">
                             <nav class="pull-left">
                                 <ul class="nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="">
-                                            Unistay
+                                        <a class="nav-link" href="http://www.themekita.com">
+                                            ThemeKita
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">
-                                            
+                                            Help
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="">
-                                            
+                                        <a class="nav-link" href="https://themewagon.com/license/#free-item">
+                                            Licenses
                                         </a>
                                     </li>
                                 </ul>
                             </nav>
                             <div class="copyright ml-auto">
-                                Made with <i class="la la-heart heart text-danger"></i> by <a href="">Aditya & Shubhangi</a>
+                                2018, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
                             </div>				
                         </div>
                     </footer>
@@ -709,7 +724,7 @@
             </div>
         </div>
         <!-- Modal -->
-        <!-- <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+        <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header bg-primary">
@@ -728,7 +743,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </body>
     <script src="assets/js/core/jquery.3.2.1.min.js"></script>
     <script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>

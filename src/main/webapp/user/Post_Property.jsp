@@ -10,85 +10,108 @@
   <link rel="stylesheet" href="style.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400&display=swap');
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      background: #dcdcdc;
-    }
-    
-    .main {
-      display: flex;
-      justify-content: space-between;
-    }
-    
-    .content {
-      flex: 1;
-      margin-right: 20px;
-      display: flex;
-      align-items: flex-start; /* Align items to the start of the cross axis */
-      margin-top: 80px;
-      flex-wrap: wrap;
-    }
-    
-    .image-wrapper {
-      flex: 0 0 auto;
-      margin-right: 20px;
-    }
-    
-    .image-wrapper img {
-      max-width: 100%;
-    }
-    
-    .text-container {
-      flex: 1;
-      margin-bottom: 20px;
-    }
-    
-    .text-container h2 {
-      margin: 0;
-      font-size: 24px;
-      font-weight: bold;
-    }
-    
-    .bullet {
-      list-style-type: none;
-      padding: 0;
-    }
-    
-    .points {
-      margin-top: 10px;
-    }
-    
-    .points i {
-      color: green;
-      margin-right: 5px;
-    }
-    
-    .check input[type="checkbox"] {
-      display: none;
-    }
-    
-    .check label.btn {
-      border: 2px solid #ccc;
-      border-radius: 10px;
-      padding: 10px;
-      cursor: pointer;
-    }
-    
-    .check input[type="checkbox"]:checked + label.btn {
-      border-color: #ffd300;
-    }
-    
-    .check {
-      width: 100%;
-      box-sizing: border-box;
-      margin-left: 500px;
-      flex: 0 0 auto;
-    }
-    
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #dcdcdc;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1500px; /* added max-width for responsiveness */
+  margin: 0 auto; /* center the content */
+  padding: 20px; /* added padding for spacing */
+  margin-top: 80px;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content img {
+  max-width: 500px;
+  height: auto;
+}
+
+.text-container {
+  margin-left: 20px; /* added left margin for spacing */
+  margin-top: 140px;
+}
+
+.text-container h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.bullet {
+  list-style-type: none;
+  padding: 0;
+}
+
+.points {
+  margin-top: 10px;
+}
+
+.points i {
+  color: green;
+  margin-right: 5px;
+}
+
+.check input[type="checkbox"] {
+  display: none;
+}
+
+.check label.btn {
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.check input[type="checkbox"]:checked + label.btn {
+  border-color: #ffd300;
+}
+
+.check {
+  margin-top: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-warning {
+  background-color: #ffd300;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-warning:hover {
+  background-color: #ffc107;
+}
+
+.check h5{
+margin-top: 10px;
+margin-bottom: 10px;
+}
+ 
     footer {
       width: 100%;
       background: linear-gradient(to right, #000000, #333333);
@@ -253,12 +276,6 @@
         flex-basis: 100%;
       }
     }
-    
-    .content img {
-      width: 100%; /* Adjusted to take full width */
-      height: auto;
-    }
-    
     @media (max-width: 700px) {
       .content {
         flex-direction: column; /* Change flex direction for smaller screens */
@@ -266,10 +283,26 @@
       }
     }
     
-     .content img {
-width: 400px;
-height: auto;
+   
+.d-inline-flex {
+  display: inline-flex; /* Display as inline flex */
+  align-items: center; /* Align items vertically */
+  padding: 10px; /* Add padding */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+  background-color: #fff3cd; /* Add light shade of yellow background color */
+  color: #000; /* Set text color to black */
 }
+
+/* Styling for the envelope icon */
+.bi-envelope-at {
+  font-size: 2em; /* Adjust icon size */
+  margin-right: 5px; /* Add margin to the right for spacing */
+  font-weight: bold; /* Make the icon bold */
+  padding: 5px; /* Add padding to the icon */
+  border-radius: 3px; /* Add border radius to the icon */
+}
+
   </style>
 </head>
 <body>
@@ -277,41 +310,39 @@ height: auto;
   <%@include file="navbar2.jsp" %>
   
   <div class="main">
-    <div class="content">
-      <div class="image-wrapper">
-        <img src="image/3d-a-man-is-working-at-home-using-a-laptop-png.webp" alt="" class="img-fluid">
-      </div>
-      <div class="text-container">
-        <h2>"Empower Your Rental Business: <br>List, Lease, and Prosper with Us!<br>PGs, Hostel, and Rooms Welcomed."</h2>
-        <ul class="bullet">
-          <li class="points"><i class="bi bi-check-circle"></i>Expand your rental portfolio with ease.</li>
-          <li class="points"><i class="bi bi-check-circle"></i>Connect with a wide range of tenants.</li>
-          <li class="points"><i class="bi bi-check-circle"></i>Manage listings, leases, and inquiries efficiently.</li>
-        </ul>
-        <!-- Form moved here -->
-        <form class="check">
-          <h3>Let's get you started</h3>
-          <h5>You are:</h5>
-          <input type="checkbox" class="btn-check" id="owner" data-group="you_are" autocomplete="off" onchange="toggleCheck(this, 'you_are')">
-          <label class="btn" for="owner">Owner</label>
-          <input type="checkbox" class="btn-check" id="agent" data-group="you_are" checked autocomplete="off" onchange="toggleCheck(this, 'you_are')">
-          <label class="btn" for="agent">Agent</label>
-          <input type="checkbox" class="btn-check" id="builder" data-group="you_are" autocomplete="off" onchange="toggleCheck(this, 'you_are')">
-          <label class="btn" for="builder">Builder</label>
-          <h5>You are here to:</h5>
-          <input type="checkbox" class="btn-check" id="sell" data-group="you_are_here_to" autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
-          <label class="btn" for="sell">Sell</label>
-          <input type="checkbox" class="btn-check" id="rent" data-group="you_are_here_to" checked autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
-          <label class="btn" for="rent">Rent</label>
-          <input type="checkbox" class="btn-check" id="pg" data-group="you_are_here_to" autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
-          <label class="btn" for="pg">List as PG</label>
-          <h5>Your Email-id:</h5>
-          <input type="email" name="email" class="input-field" placeholder="Email" required>
-          <button type="button" class="btn btn-warning">Start Now</button>
-        </form>
-      </div>
+  <div class="content">
+    <img src="image/3d-a-man-is-working-at-home-using-a-laptop-png.webp" alt="" class="img-fluid">
+    <div class="text-container">
+      <h2>"Empower Your Rental Business: <br>List, Lease, and Prosper with Us!<br>PGs, Hostel, and Rooms Welcomed."</h2>
+      <ul class="bullet">
+        <li class="points"><i class="bi bi-check-circle"></i>Expand your rental portfolio with ease.</li>
+        <li class="points"><i class="bi bi-check-circle"></i>Connect with a wide range of tenants.</li>
+        <li class="points"><i class="bi bi-check-circle"></i>Manage listings, leases, and inquiries efficiently.</li>
+      </ul>
     </div>
   </div>
+  <form class="check">
+    <h3>Let's get you started</h3>
+    <h5>You are:</h5>
+    <input type="checkbox" class="btn-check" id="owner" data-group="you_are" autocomplete="off" onchange="toggleCheck(this, 'you_are')">
+    <label class="btn" for="owner">Owner</label>
+    <input type="checkbox" class="btn-check" id="agent" data-group="you_are" checked autocomplete="off" onchange="toggleCheck(this, 'you_are')">
+    <label class="btn" for="agent">Agent</label>
+    <input type="checkbox" class="btn-check" id="builder" data-group="you_are" autocomplete="off" onchange="toggleCheck(this, 'you_are')">
+    <label class="btn" for="builder">Builder</label>
+    <h5>You are here to:</h5>
+    <input type="checkbox" class="btn-check" id="sell" data-group="you_are_here_to" autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
+    <label class="btn" for="sell">Sell</label>
+    <input type="checkbox" class="btn-check" id="rent" data-group="you_are_here_to" checked autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
+    <label class="btn" for="rent">Rent</label>
+    <input type="checkbox" class="btn-check" id="pg" data-group="you_are_here_to" autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
+    <label class="btn" for="pg">List as PG</label>
+    <h5>Your Email-id:</h5>
+    <input type="email" name="email" class="input-field" placeholder="Email" required>
+   <div class="d-inline-flex p-2"> <i class="bi bi-envelope-at"> </i>Enter your Email to get enquiries from Buyer/Tenant</div>
+    <button type="button" class="btn btn-warning">Start Now</button>
+  </form>
+</div>
   
   <!-- footer -->
   <footer>
