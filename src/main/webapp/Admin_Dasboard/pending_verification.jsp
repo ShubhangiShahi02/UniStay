@@ -111,7 +111,7 @@
                                             <div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
                                             <div class="u-text">
                                                 <h4>User</h4>
-                                                <p class="text-muted">info@unistay.com</p><a href="profile.jsp" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                                <p class="text-muted">info@unistay.com</p><a href="index.jsp" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                             </div>
                                         </li>
                                         <div class="dropdown-divider"></div>
@@ -134,7 +134,7 @@
                     <div class="scrollbar-inner sidebar-wrapper">
                         <div class="user">
                             <div class="photo">
-                                <img src="assets/img/profile.jpg">
+                                <img src="">
                             </div>
                             <div class="info">
                                 <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
