@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home Page</title>
+  <title>Post Property | User Roles</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -321,26 +321,32 @@ margin-bottom: 10px;
       </ul>
     </div>
   </div>
-  <form class="check">
+  <form class="check" action="JDBC_user_roles_purposes.jsp" method="post">
     <h3>Let's get you started</h3>
     <h5>You are:</h5>
-    <input type="checkbox" class="btn-check" id="owner" data-group="you_are" autocomplete="off" onchange="toggleCheck(this, 'you_are')">
+    <input type="checkbox" class="btn-check" id="owner" value="Owner" name="you_are"  data-group="you_are" autocomplete="off" onchange="toggleCheck(this, 'you_are')">
     <label class="btn" for="owner">Owner</label>
-    <input type="checkbox" class="btn-check" id="agent" data-group="you_are" checked autocomplete="off" onchange="toggleCheck(this, 'you_are')">
+    
+    <input type="checkbox" class="btn-check" id="agent" value="Agent" name="you_are"  data-group="you_are" checked autocomplete="off" onchange="toggleCheck(this, 'you_are')">
     <label class="btn" for="agent">Agent</label>
-    <input type="checkbox" class="btn-check" id="builder" data-group="you_are" autocomplete="off" onchange="toggleCheck(this, 'you_are')">
+    
+    <input type="checkbox" class="btn-check" id="builder" value="Builder" name="you_are"  data-group="you_are" autocomplete="off" onchange="toggleCheck(this, 'you_are')">
     <label class="btn" for="builder">Builder</label>
+   
     <h5>You are here to:</h5>
-    <input type="checkbox" class="btn-check" id="sell" data-group="you_are_here_to" autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
+    <input type="checkbox" class="btn-check" id="sell" value="Sell" name="you_are_here_to" data-group="you_are_here_to"  autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
     <label class="btn" for="sell">Sell</label>
-    <input type="checkbox" class="btn-check" id="rent" data-group="you_are_here_to" checked autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
+    
+    <input type="checkbox" class="btn-check" id="rent" value="Rent" name="you_are_here_to" data-group="you_are_here_to"  checked autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
     <label class="btn" for="rent">Rent</label>
-    <input type="checkbox" class="btn-check" id="pg" data-group="you_are_here_to" autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
+    
+    <input type="checkbox" class="btn-check" id="pg" value="List as PG" name="you_are_here_to" data-group="you_are_here_to"  autocomplete="off" onchange="toggleCheck(this, 'you_are_here_to')">
     <label class="btn" for="pg">List as PG</label>
+   
     <h5>Your Email-id:</h5>
     <input type="email" name="email" class="input-field" placeholder="Email" required>
    <div class="d-inline-flex p-2"> <i class="bi bi-envelope-at"> </i>Enter your Email to get enquiries from Buyer/Tenant</div>
-    <button type="button" class="btn btn-warning">Start Now</button>
+    <button type="submit" class="btn btn-warning">Start Now</button>
   </form>
 </div>
   

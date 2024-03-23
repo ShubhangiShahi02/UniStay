@@ -25,7 +25,7 @@ public class ProFileUploadServlet extends HttpServlet {
         // Database connection details
         String url = "jdbc:mysql://localhost:3306/unistay";
         String user = "root";
-        String password = "root";
+        String password = "unistayroot";
 
         // Get the uploaded file
         Part filePart = request.getPart("profilePic");
@@ -75,7 +75,7 @@ public class ProFileUploadServlet extends HttpServlet {
                 }
             }
             request.setAttribute("Message", message);
-            getServletContext().getRequestDispatcher("/user/Home.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/user/MyProfile.jsp").forward(request, response);
         }
     }
     

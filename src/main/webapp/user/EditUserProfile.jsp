@@ -151,7 +151,7 @@ font-size: 25px;
     <div class="hero">
     <div class="navbar">
     <div>
-    <a href="Home.jsp">Uni<span>Stay</span></a>
+    <a href="MyProfile.jsp">Uni<span>Stay</span></a>
     </div>
     </div>
         <div class="form-box">
