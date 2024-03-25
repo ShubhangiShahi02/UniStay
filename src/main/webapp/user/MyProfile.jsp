@@ -297,7 +297,7 @@ text-align: center;
                 try {
                     // Connect to the database
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "unistayroot");
+                    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
 
                     // Get the email from the session
                     String userEmail = (String) session.getAttribute("userEmail");
@@ -339,7 +339,7 @@ text-align: center;
             <%
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "unistayroot");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
 
                     Statement stmt = con.createStatement();
                     ResultSet rs = stmt.executeQuery("SELECT * FROM user");

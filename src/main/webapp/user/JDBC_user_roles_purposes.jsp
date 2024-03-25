@@ -16,7 +16,7 @@
         // JDBC connection parameters
         String url = "jdbc:mysql://localhost:3306/unistay";
         String username = "root";
-        String password = "unistayroot";
+        String password = "root";
 
         Connection conn = null;
         PreparedStatement pstmt = null;

@@ -10,7 +10,7 @@ if (sess != null && sess.getAttribute("userEmail") != null) {
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "unistayroot");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
         
         // First, delete associated images
         String deleteImagesQuery = "DELETE FROM image WHERE email = ?";

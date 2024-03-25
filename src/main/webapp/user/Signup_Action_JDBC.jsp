@@ -22,7 +22,7 @@ if (session != null && session.getAttribute("userEmail") != null) {
         String hashedPassword = Base64.getEncoder().encodeToString(hashedPasswordBytes);
 
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "unistayroot");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
         
         String qr = "INSERT INTO user (username, mobilenumber, email, password) VALUES (?, ?, ?, ?)";
         PreparedStatement ps = con.prepareStatement(qr);

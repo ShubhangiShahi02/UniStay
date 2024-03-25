@@ -25,7 +25,7 @@ public class ProFileUploadServlet extends HttpServlet {
         // Database connection details
         String url = "jdbc:mysql://localhost:3306/unistay";
         String user = "root";
-        String password = "unistayroot";
+        String password = "root";
 
         // Get the uploaded file
         Part filePart = request.getPart("profilePic");

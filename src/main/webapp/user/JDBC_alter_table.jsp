@@ -8,7 +8,7 @@ try {
     // Establish a connection to the database
     String url = "jdbc:mysql://localhost:3306/unistay";
     String username = "root";
-    String password = "unistayroot";
+    String password = "root";
     Connection con = DriverManager.getConnection(url, username, password);
     
     if (con != null) {

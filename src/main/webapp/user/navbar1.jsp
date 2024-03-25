@@ -123,7 +123,7 @@ input[type="submit"]:hover {
          <% 
          try {
         	    Class.forName("com.mysql.cj.jdbc.Driver");
-        	    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "unistayroot");
+        	    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/unistay", "root", "root");
 
         	    Statement stmt = con.createStatement();
         	    ResultSet rs = stmt.executeQuery("SELECT * FROM user");

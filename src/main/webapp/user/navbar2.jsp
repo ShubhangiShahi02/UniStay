@@ -212,7 +212,7 @@ input[type="file"] {
   </li>
   
    <li class="nav-item">
-  <a class="btn btn-outline-light" href="AllPropertyInterface.jsp">
+  <a class="btn btn-outline-light" href="Post_Property.jsp">
   <i class="bi bi-upload"></i> Post Property
 </a>
    </li>
