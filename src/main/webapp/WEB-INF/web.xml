@@ -29,4 +29,14 @@
     <servlet-name>ProFileUploadServlet</servlet-name>
     <url-pattern>/user/ProFileUploadServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddPropertyServlet</display-name>
+    <servlet-name>AddPropertyServlet</servlet-name>
+    <servlet-class>project.AddPropertyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddPropertyServlet</servlet-name>
+    <url-pattern>/user/AddPropertyServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
