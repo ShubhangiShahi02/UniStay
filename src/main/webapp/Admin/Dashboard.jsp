@@ -35,7 +35,7 @@ top: 0;
 left: 0;
 bottom: 0;
 width: 110px;
-height: 100vh;
+height: 110vh;
 padding: 0 1.7rem;
 color: #fff;
 overflow: hidden;
@@ -156,6 +156,137 @@ transition: all 0.5s ease-out;
 
 .search-box i:hover{
 transform: scale(1.2);
+}
+
+ @media only screen and (max-width: 1280px) and (min-height: 551px){
+    .sidebar{
+position: stick;
+top: 0;
+left: 0;
+bottom: 0;
+width: 110px;
+height: 150vh;
+padding: 0 1.7rem;
+color: #fff;
+overflow: hidden;
+transition: all 0.5s linear;
+ background: rgba(0, 0, 0, 0.2);
+ backdrop-filter: blur(5px); 
+}
+
+.sidebar:hover{
+width: 260px;
+transition: 0.5s ease-in-out;
+}
+
+.logo{
+height: 80px;
+padding: 16px;
+}
+
+.menu{
+height: 85%;
+position: realtive;
+list-style: none;
+padding: 0;
+}
+
+.menu li{
+padding: 1rem;
+margin: 8px 0;
+border-radius: 8px;
+transition: all 0.5s ease-in-out;
+}
+
+.menu li:hover, .active{
+background: #e0e0e058;
+}
+
+.menu a{
+color: #fff;
+font-size: 14px;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 1.2rem;
+}
+
+.menu a span{
+overflow: hidden;
+}
+
+.menu a i{
+font-size: 1.2rem;
+}
+
+.menu .logout{
+margin-top: 80px;
+}
+
+.main--content{
+position: relative;
+width: 100%;
+padding: 1rem;
+color: #fff;
+}
+
+.header--wrapper img{
+width: 50px;
+height: 50px;
+cursor: pointer;
+border-radius: 50%;
+}
+
+.header--wrapper{
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+ background: rgba(0,0,0,0.3);
+ backdrop-filter: blur(5px);
+ border-radius: 10px;
+ padding: 10px 2rem;
+ margin-bottom: 1rem;
+}
+
+.header--title{
+color: #EBAB00;
+}
+
+.header--title a{
+font-size: 20px;
+}
+
+.user-info{
+display: flex;
+align-items: center;
+gap: 1;
+}
+
+.search-box{
+background: rgb(237, 237, 237);
+border-radius: 15px;
+color: rgba(113, 99, 186, 255);
+display: flex;
+align-items: center;
+gap: 5px;
+padding: 4px 12px;
+}
+
+.search-box input{
+background: transparent;
+padding: 10px;
+}
+
+.search-box i{
+font-size: 1.2rem;
+cursor: pointer;
+transition: all 0.5s ease-out;
+}
+
+.search-box i:hover{
+transform: scale(1.2);
+}
 }
 
 /* card container */

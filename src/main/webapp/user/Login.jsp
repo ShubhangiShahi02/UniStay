@@ -11,90 +11,89 @@
   
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400&display=swap');
-    *{
-        margin: 0;
-        padding: 0;
-    }
+   * {
+    margin: 0;
+    padding: 0;
+}
 
-    .hero{
-        height: 100%;
-        width: 100%;
-        background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(image/New2.webp);
-        background-position: center;
-        background-size: cover;
-        position: absolute;
-       
-    }
+.hero {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(image/New2.webp);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
 
-    .form-box{
-        width: 380px;
-        height: 500px;
-        position: relative;
-        margin: 3% auto;
-        background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), transparent;
-        padding: 5px;
-        overflow: hidden;
-    }
+.form-box {
+    width: 380px;
+    height: 500px;
+    position: relative;
+    margin: 3% auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), transparent;
+    padding: 5px;
+    overflow: hidden;
+}
 
-    .button-box{
-        width: 220px;
-        margin: 35px auto;
-        position: relative;
-        box-shadow: 0 0 20px 9px #ffd3001f;
-        border-radius: 30px;
-    }
+.button-box {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ffd3001f;
+    border-radius: 30px;
+}
 
-    .toggle-btn{
-        padding: 10px 30px;
-        cursor: pointer;
-        background: transparent;
-        border: 0;
-        outline: none;
-        position: relative;
-        color: #fff;
-        font-size: 14px;
-    }
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+}
 
-    #btn{
-        top: 0;
-        left: 0;
-        position: absolute;
-        width: 110px;
-        height: 100%;
-        background: linear-gradient(to right, #5d4f08, #ffd300);
-        border-radius: 30px;
-        transition: .5s;
-    }
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #5d4f08, #ffd300);
+    border-radius: 30px;
+    transition: .5s;
+}
 
-    .social-icons{
-        margin: 10px auto;
-        text-align: center;
-    }
+.social-icons {
+    margin: 10px auto;
+    text-align: center;
+}
 
-    .social-icons .bi{
+.social-icons .bi {
     width: 50px;
     box-shadow: 0 0 20px 0 #ffd3001f;
     margin: 0 12px;
     cursor: pointer;
     border-radius: 50%;
-    color:#ffd300;
+    color: #ffd300;
     font-size: 25px;
     transition: all 0.4s ease;
-    }
+}
 
-    .social-icons .bi:hover{
+.social-icons .bi:hover {
     background: transparent;
-     color: #fff;
-    }
+    color: #fff;
+}
 
-.input-group{
+.input-group {
     top: 180px;
     position: absolute;
     width: 280px;
     transition: .5s;
 }
 
-.input-field{
+.input-field {
     width: 100%;
     padding: 10px 0;
     margin: 5px 0;
@@ -107,11 +106,11 @@
     color: white;
 }
 
-.input-field::placeholder{
+.input-field::placeholder {
     color: #eee7e7;
 }
 
-.submit-btn{
+.submit-btn {
     width: 85%;
     padding: 10px 30px;
     cursor: pointer;
@@ -121,53 +120,79 @@
     border: 0;
     outline: none;
     border-radius: 30px;
-     color: #fff;
-}
-.check-box{
-   margin: 30px 10px 30px 0;
+    color: #fff;
 }
 
-span{
+.check-box {
+    margin: 30px 10px 30px 0;
+}
+
+span {
     margin: 30px 10px 30px 0;
     color: #f6ecec;
     font-size: 12px;
     position: absolute;
 }
-    
-#login{
+
+#login {
     left: 50px;
 }
 
-#register{
+#register {
     left: 450px;
 }
 
-.text{
-color: #fff;
-margin-left: 80px;
-text-decoration: none;
+.text {
+    color: #fff;
+    margin-left: 80px;
+    text-decoration: none;
 }
 
-.text:hover{
-text-decoration: underline;
+.text:hover {
+    text-decoration: underline;
 }
 
-.navbar a{
-display: flex;
-align-items: center;
-padding: 20px;
-padding-left: 30px;
-padding-right: 30px;
-padding-top: 10px;
-color:  #ffd300;
-text-decoration: none;
-font-size: 20px;
+.navbar a {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    color: #ffd300;
+    text-decoration: none;
+    font-size: 20px;
 }
 
-.navbar span{
-margin:35px;
-text-decoration: none;
-font-size: 20px;
+.navbar span {
+    margin: 35px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 1280px) and (min-height: 551px){
+    .hero {
+        background-position: center top;
+    }
+    
+    .form-box {
+        width: 380px;
+        height: 490px;
+        margin: -20px auto 0; /* Adjust the margin-top value */
+    }
+}
+
+
+@media only screen and (max-width: 1280px) and (max-height: 551px){
+    .hero {
+        background-position: center top;
+    }
+    
+    .form-box {
+        width: 380px;
+        height: 490px;
+        margin: -20px auto 0; /* Adjust the margin-top value */
+    }
 }
 </style>
 

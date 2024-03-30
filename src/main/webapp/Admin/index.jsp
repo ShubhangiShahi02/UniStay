@@ -111,6 +111,12 @@ section .button {
  .portfolio .card{
  box-shadow: 15px 15px 40px rgba(0,0,0,0.15);
  }
+ 
+ @media only screen and (max-width: 1280px) and (min-height: 551px){
+    .carousel-caption{
+    top: 50px;
+}
+}
   </style>
   </head>
   <body>

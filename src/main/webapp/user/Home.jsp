@@ -283,6 +283,12 @@ flex-basis: 100%;
 flex-basis: 100%;
 }
 }
+
+@media only screen and (max-width: 1280px) and (min-height: 551px){
+    .carousel-caption{
+    top: 50px;
+}
+}
   </style>
   </head>
   <body>

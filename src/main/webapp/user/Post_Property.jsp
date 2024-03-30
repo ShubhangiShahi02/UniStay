@@ -39,6 +39,19 @@ body {
   height: auto;
 }
 
+@media only screen and (max-width: 1280px) and (min-height: 551px){
+   .content img {
+  max-width: 400px;
+  top: 40px;
+  height: auto;
+}
+.text-container h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+}
+
 .text-container {
   margin-left: 20px; /* added left margin for spacing */
   margin-top: 140px;

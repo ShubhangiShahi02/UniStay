@@ -147,6 +147,18 @@ margin:35px;
 text-decoration: none;
 font-size: 20px;
 }
+
+@media only screen and (max-width: 1280px) and (min-height: 551px){
+    .hero {
+        background-position: center top;
+    }
+    
+    .form-box {
+        width: 380px;
+        height: 450px;
+        margin: -20px auto 0; /* Adjust the margin-top value */
+    }
+}
 </style>
 </head>
 <body>

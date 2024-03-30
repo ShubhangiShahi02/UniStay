@@ -204,6 +204,164 @@
         .search-box i:hover{
             transform: scale(1.2);
         }
+   
+    @media only screen and (max-width: 1280px) and (min-height: 551px){
+      .user {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 60px;
+            font-size: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+        }
+
+        .user .user-name {
+            display: none;
+        }
+
+        .user-name {
+            margin-left: 7px;
+        }
+
+        .user-name h5 {
+            font-size: 15px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .user-img {
+            width: 30px;
+            border-radius: 50%;
+            margin: auto;
+        }
+
+        #imageContainer1 {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-size: cover;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0 5px;
+        }
+
+        ul li {
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        ul li i {
+            font-size: 13px;
+            margin-right: 0px;
+        }
+
+        ul li:hover{
+            text-decoration:underline;
+        }
+
+        ul li a {
+            white-space: nowrap;
+            text-decoration: none;
+            color: white;
+            display: none;
+            font-size: 13px;
+        }
+
+        .side-nav:hover {
+            width: 260px;
+        }
+
+        .side-nav:hover .user .user-name {
+            display: block;
+        }
+
+        .side-nav:hover .user {
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .side-nav:hover .user-img{
+            margin: 0;
+        }
+
+        .side-nav:hover ul li a{
+            display: block;
+        }
+
+        .side-nav:hover ul li i{
+            margin-right: 10px;
+        }
+
+        .side-nav:hover ul li{
+            justify-content: flex-start;
+        }
+
+        .main--content{
+            margin-left: 110px; /* Adjusted margin */
+            color: white;
+            position: relative;
+            width: calc(100% - 110px); /* Calculate width based on side nav */
+            padding: 1rem;
+            transition: margin-left 0.5s; /* Added transition for smooth shifting */
+            z-index: 0; /* Ensure the main content is behind the side nav */
+        }
+
+        .header--wrapper{
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            padding: 10px 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .user--info{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-box{
+            background: rgba(237,237,237);
+            border-radius: 15px;
+            color: rgba(113, 99, 186, 255);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 12px;
+        }
+
+        .search-box input{
+            background: transparent;
+            padding: 10px;
+        }
+
+        .search-box i{
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.5s ease-out;
+        }
+
+        .search-box i:hover{
+            transform: scale(1.2);
+        }
+    }
         
  /* card container */
  .card--container{
