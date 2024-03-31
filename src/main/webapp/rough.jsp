@@ -289,6 +289,92 @@ try {
   </div>
 </div>
 
+
+
+<h6>Property Location</h6>  
+        <div class="Pro-Loc">
+            <input type="text" name="city" class="input-field" placeholder="Enter City" required>
+                <input type="text" name="locality" class="input-field" placeholder="Enter Locality" required>
+        </div>
+    
+    <br>    
+         <h6>Property Features</h6>  
+        <div class="Pro-Fea">
+          <p>Rooms</p>
+         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        
+  <button type="button" class="btn btn-outline-warning">1</button>
+  <button type="button" class="btn btn-outline-warning">2</button>
+
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      2+
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">3</a></li>
+      <li><a class="dropdown-item" href="#">4</a></li>
+        <li><a class="dropdown-item" href="#">5</a></li>
+      <li><a class="dropdown-item" href="#">6</a></li>
+    </ul>
+  </div>
+</div>
+
+ <p>Balconies</p>
+         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-outline-warning">0</button>    
+  <button type="button" class="btn btn-outline-warning">1</button>
+  <button type="button" class="btn btn-outline-warning">2</button>
+
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      2+
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">3</a></li>
+      <li><a class="dropdown-item" href="#">4</a></li>
+        <li><a class="dropdown-item" href="#">5</a></li>
+      <li><a class="dropdown-item" href="#">6</a></li>
+    </ul>
+  </div>
+</div>
+
+<p>Floor No.</p>
+         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-outline-warning">Lower Basement</button>    
+  <button type="button" class="btn btn-outline-warning">Upper Basement</button>
+  <button type="button" class="btn btn-outline-warning">Ground</button>
+    <button type="button" class="btn btn-outline-warning">1</button>    
+  <button type="button" class="btn btn-outline-warning">2</button>
+  <button type="button" class="btn btn-outline-warning">3</button>
+
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      3+
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">4</a></li>
+        <li><a class="dropdown-item" href="#">5</a></li>
+      <li><a class="dropdown-item" href="#">6</a></li>
+        <li><a class="dropdown-item" href="#">7</a></li>
+    </ul>
+  </div>
+</div>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400&display=swap');
+
+
+<div class="dropdown mt-3">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="propertyTypeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            Select Property type
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="propertyTypeDropdown">
+                            <li><a class="dropdown-item" href="#">Flat/Apartment</a></li>
+                            <li><a class="dropdown-item" href="#">Full House</a></li>
+                            <li><a class="dropdown-item" href="#">Sharing Basis</a></li>
+                        </ul>
+                    </div>
+
+
 <script>
     function validateForm() {
         // Disable submit button to prevent multiple submissions
