@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UniStay</title>
     <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Custom CSS -->
      <link rel="stylesheet"  href="style.css" >
@@ -253,9 +254,49 @@
                             <li><a class="dropdown-item" href="#">8</a></li>
                             <li><a class="dropdown-item" href="#">8+</a></li>
                         </ul>
-                    </div>     
-                    
+                    </div>                                   
                 </div>
+                
+                  <br>    
+                <!-- Furnishing Details -->
+                <h6>Furnishing Details</h6>
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+  <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+  <label class="btn btn-outline-warning" for="btncheck1">Cupboards</label>
+
+  <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+  <label class="btn btn-outline-warning" for="btncheck2">Study Table</label>
+
+<input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+  <label class="btn btn-outline-warning" for="btncheck3">AC</label>
+  
+  <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+  <label class="btn btn-outline-warning" for="btncheck4">Geyser</label>
+  
+  <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+  <label class="btn btn-outline-warning" for="btncheck5">Washing Machine</label>
+  
+  <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+  <label class="btn btn-outline-warning" for="btncheck6">Fridge</label>
+  
+  <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+  <label class="btn btn-outline-warning" for="btncheck7">Cooler</label>
+  
+  <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
+  <label class="btn btn-outline-warning" for="btncheck8">TV</label>
+
+  <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+  <label class="btn btn-outline-warning" for="btncheck9">WiFi</label>
+</div>
+ 
+ <br>  
+                <!--Price Details -->
+                <h6>Price Details</h6>
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+  					<p>Expected Price</p>	
+  					 <input type="text" name="username" class="input-field form-control mb-2" placeholder="Enter Total Price" required>
+  				</div>
+
             </form>
         </div>
     </div>
