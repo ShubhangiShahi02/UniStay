@@ -113,10 +113,10 @@
                 <div class="Pro-Fea">
                     <p>Rooms</p>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <button type="button" class="btn btn-outline-warning">1</button>
-                        <button type="button" class="btn btn-outline-warning">2</button>
+                        <button type="button" class="btn btn-outline-secondary">1</button>
+                        <button type="button" class="btn btn-outline-secondary">2</button>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 2+
                             </button>
                             <ul class="dropdown-menu">
@@ -130,11 +130,11 @@
 
                     <p>Balconies</p>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <button type="button" class="btn btn-outline-warning">0</button>    
-                        <button type="button" class="btn btn-outline-warning">1</button>
-                        <button type="button" class="btn btn-outline-warning">2</button>
+                        <button type="button" class="btn btn-outline-secondary">0</button>    
+                        <button type="button" class="btn btn-outline-secondary">1</button>
+                        <button type="button" class="btn btn-outline-secondary">2</button>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 2+
                             </button>
                             <ul class="dropdown-menu">
@@ -148,14 +148,14 @@
 
                     <p>Floor No.</p>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <button type="button" class="btn btn-outline-warning">Lower Basement</button>    
-                        <button type="button" class="btn btn-outline-warning">Upper Basement</button>
-                        <button type="button" class="btn btn-outline-warning">Ground</button>
-                        <button type="button" class="btn btn-outline-warning">1</button>    
-                        <button type="button" class="btn btn-outline-warning">2</button>
-                        <button type="button" class="btn btn-outline-warning">3</button>
+                        <button type="button" class="btn btn-outline-secondary">Lower Basement</button>    
+                        <button type="button" class="btn btn-outline-secondary">Upper Basement</button>
+                        <button type="button" class="btn btn-outline-secondary">Ground</button>
+                        <button type="button" class="btn btn-outline-secondary">1</button>    
+                        <button type="button" class="btn btn-outline-secondary">2</button>
+                        <button type="button" class="btn btn-outline-secondary">3</button>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 3+
                             </button>
                             <ul class="dropdown-menu">
@@ -169,14 +169,14 @@
                     
                      <p>Total Floors</p>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <button type="button" class="btn btn-outline-warning">1</button>    
-                        <button type="button" class="btn btn-outline-warning">2</button>
-                        <button type="button" class="btn btn-outline-warning">3</button>
-                        <button type="button" class="btn btn-outline-warning">4</button>    
-                        <button type="button" class="btn btn-outline-warning">5</button>
-                        <button type="button" class="btn btn-outline-warning">6</button>
+                        <button type="button" class="btn btn-outline-secondary">1</button>    
+                        <button type="button" class="btn btn-outline-secondary">2</button>
+                        <button type="button" class="btn btn-outline-secondary">3</button>
+                        <button type="button" class="btn btn-outline-secondary">4</button>    
+                        <button type="button" class="btn btn-outline-secondary">5</button>
+                        <button type="button" class="btn btn-outline-secondary">6</button>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 6+
                             </button>
                             <ul class="dropdown-menu">
@@ -190,17 +190,17 @@
                     
       <p>Furnished Status</p>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <button type="button" class="btn btn-outline-warning">Furnished</button>    
-                        <button type="button" class="btn btn-outline-warning">Unfurnished</button>
-                        <button type="button" class="btn btn-outline-warning">Semi-Furnished</button>
+                        <button type="button" class="btn btn-outline-secondary">Furnished</button>    
+                        <button type="button" class="btn btn-outline-secondary">Unfurnished</button>
+                        <button type="button" class="btn btn-outline-secondary">Semi-Furnished</button>
                         </div>               
               
                <p>Bathrooms</p>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <button type="button" class="btn btn-outline-warning">1</button>
-                        <button type="button" class="btn btn-outline-warning">2</button>
+                        <button type="button" class="btn btn-outline-secondary">1</button>
+                        <button type="button" class="btn btn-outline-secondary">2</button>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 2+
                             </button>
                             <ul class="dropdown-menu">
@@ -262,33 +262,32 @@
                 <h6>Furnishing Details</h6>
                 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
   <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btncheck1">Cupboards</label>
+  <label class="btn btn-outline-secondary" for="btncheck1">Cupboards</label>
 
   <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btncheck2">Study Table</label>
+  <label class="btn btn-outline-secondary" for="btncheck2">Study Table</label>
 
 <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btncheck3">AC</label>
+  <label class="btn btn-outline-secondary" for="btncheck3">AC</label>
   
   <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btncheck4">Geyser</label>
+  <label class="btn btn-outline-secondary" for="btncheck4">Geyser</label>
   
   <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btncheck5">Washing Machine</label>
+  <label class="btn btn-outline-secondary" for="btncheck5">Washing Machine</label>
   
   <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btncheck6">Fridge</label>
+  <label class="btn btn-outline-secondary" for="btncheck6">Fridge</label>
   
   <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btncheck7">Cooler</label>
+  <label class="btn btn-outline-secondary" for="btncheck7">Cooler</label>
   
   <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btncheck8">TV</label>
+  <label class="btn btn-outline-secondary" for="btncheck8">TV</label>
 
   <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btncheck9">WiFi</label>
+  <label class="btn btn-outline-secondary" for="btncheck9">WiFi</label>
 </div>
- 
  <br>  
                 <!--Price Details -->
                 <h6>Price Details</h6>
