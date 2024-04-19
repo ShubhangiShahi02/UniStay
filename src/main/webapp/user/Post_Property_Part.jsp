@@ -38,6 +38,20 @@
             display: inline-block;
             margin-right: 10px;
         }
+        
+        
+
+        /* Styling for p tag */
+        p {
+            font-weight: bold; /* Making the text bold */
+            font-size: 16px; /* Changing the font size */
+        }
+
+        /* Styling for h6 tag */
+        h6 {
+            font-weight: bold; /* Making the text bold */
+            font-size: 20px; /* Changing the font size */
+        }
     </style>
 </head>
 <body>
@@ -127,6 +141,8 @@
                             </ul>
                         </div>
                     </div>
+                    <br>
+                    <br>
 
                     <p>Balconies</p>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
@@ -145,6 +161,8 @@
                             </ul>
                         </div>
                     </div>
+                    <br>
+                    <br>
 
                     <p>Floor No.</p>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
@@ -166,6 +184,8 @@
                             </ul>
                         </div>
                     </div>
+                   <br>
+                   <br>
                     
                      <p>Total Floors</p>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
@@ -187,6 +207,8 @@
                             </ul>
                         </div>
                     </div>
+                   <br>
+                   <br>
                     
       <p>Furnished Status</p>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
@@ -194,7 +216,8 @@
                         <button type="button" class="btn btn-outline-secondary">Unfurnished</button>
                         <button type="button" class="btn btn-outline-secondary">Semi-Furnished</button>
                         </div>               
-              
+              <br>
+              <br>
                <p>Bathrooms</p>
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                         <button type="button" class="btn btn-outline-secondary">1</button>
@@ -211,7 +234,8 @@
                             </ul>
                         </div>
                     </div>      
-                    
+                    <br>
+                    <br>
                  <p>How old is the PG</p>    
                     <div class="dropdown mt-3">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="propertyTypeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -225,7 +249,7 @@
                             <li><a class="dropdown-item" href="#">4+ years</a></li>
                         </ul>
                     </div>
-                    
+                    <br>
                <p>Tenants You Prefer</p>    
                     <div class="dropdown mt-3">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="propertyTypeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -237,7 +261,7 @@
                             <li><a class="dropdown-item" href="#">Both</a></li>
                         </ul>
                     </div>     
-                    
+                    <br>
                         <p>No. of Rooms in PG</p>    
                     <div class="dropdown mt-3">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="propertyTypeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -289,17 +313,22 @@
   <label class="btn btn-outline-secondary" for="btncheck9">WiFi</label>
 </div>
  <br>  
+ <br>
                 <!--Price Details -->
                 <h6>Price Details</h6>
                 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
   					<p>Expected Price</p>	
   					 <input type="text" name="username" class="input-field form-control mb-2" placeholder="Enter Total Price" required>
   				</div>
-
+<br>
+ 				<button type="submit" class="btn btn-warning submit-btn">Post</button>
+  				
             </form>
         </div>
     </div>
 </div>
+
+
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
