@@ -39,7 +39,24 @@
             margin-right: 10px;
         }
         
-        
+     .btn-warning {
+  background-color: #ffd300;
+  color: #fff;
+  border: none;
+  padding: 10px 70px; /* Increased the padding */
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button-container {
+  text-align: center;
+}
+
+
+.btn-warning:hover {
+  background-color: #ffc107;
+}   
 
         /* Styling for p tag */
         p {
@@ -321,8 +338,9 @@
   					 <input type="text" name="username" class="input-field form-control mb-2" placeholder="Enter Total Price" required>
   				</div>
 <br>
- 				<button type="submit" class="btn btn-warning submit-btn">Post</button>
-  				
+<div class="button-container">
+ 			<button type="submit" class="btn btn-warning">Post</button>
+  			</div>	
             </form>
         </div>
     </div>
