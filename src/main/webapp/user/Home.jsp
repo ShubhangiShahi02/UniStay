@@ -289,6 +289,21 @@ flex-basis: 100%;
     top: 50px;
 }
 }
+
+/* Added CSS for card shadow and image hover effect */
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-img-hover:hover {
+  transform: scale(1.05);
+}
+
   </style>
   </head>
   <body>
@@ -339,12 +354,49 @@ flex-basis: 100%;
 </div>
 
    <!-- Search-bar -->
-  <div class="container"> 
- <form action="" class="search-bar">
- <input type="text" placeholder="Search" name="search">
- <button type="submit"><i class="bi bi-search font-weight-bold fs-4 text-white"></i></button>
- </form>
+ <div class="container"> 
+  <form action="" class="search-bar mb-4"> <!-- Added mb-4 class for margin bottom -->
+    <input type="text" placeholder="Search" name="search">
+    <button type="submit"><i class="bi bi-search font-weight-bold fs-4 text-white"></i></button>
+  </form>
+
+  <div class="d-flex justify-content-between">
+    <div class="card shadow" style="width: 18rem;"> <!-- Added shadow class for card shadow -->
+      <img src="image/blossom4.jpg" class="card-img-top card-img-hover" alt="..."> <!-- Added card-img-hover class -->
+      <div class="card-body">
+       <p class="card-text">Flat</p>
+        <h4 class="card-title bi bi-currency-rupee">6500 | 1300 sqft</h4>
+        <p class="card-text">Mandi, New Delhi</p>
+        <p class="card-text">Ready To Move</p>
+        <a href="#" class="btn btn-warning">View Details</a>
+      </div>
+    </div>
+
+    <div class="card shadow" style="width: 18rem;"> <!-- Added shadow class for card shadow -->
+      <img src="image/2.jpeg" class="card-img-top card-img-hover" alt="..."> <!-- Added card-img-hover class -->
+      <div class="card-body">
+       <p class="card-text">Sharing Basis</p>
+      <h4 class="card-title bi bi-currency-rupee">4500 | 850 sqft</h4>
+        <p class="card-text">Rajouri Garden, New Delhi</p>
+        <p class="card-text">Ready To Move</p>
+        <a href="#" class="btn btn-warning">View Details</a>
+      </div>
+    </div>
+
+    <div class="card shadow" style="width: 18rem;"> <!-- Added shadow class for card shadow -->
+      <img src="image/104.jpg" class="card-img-top card-img-hover" alt="..."> <!-- Added card-img-hover class -->
+      <div class="card-body">
+      <p class="card-text">Hostel</p>
+        <h4 class="card-title bi bi-currency-rupee">8500 | 1250 sqft</h4>
+        <p class="card-text">Saket, Indore</p>
+        <p class="card-text">Ready To Move</p>
+        <a href="#" class="btn btn-warning">View Details</a>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 <!-- footer -->
 <footer>
