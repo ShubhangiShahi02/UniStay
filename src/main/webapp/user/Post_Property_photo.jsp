@@ -106,7 +106,9 @@
       <span class="add-more" onclick="addMorePhotos()">Add More Photos</span>
     </div>
     <div class="form-group">
-      <input type="submit" value="Upload Photos">
+      <button type="submit" class="btn btn-warning">
+  <a href="Home.jsp" style="text-decoration: none; color: black;">Post</a>
+</button>
     </div>
   </form>
 
