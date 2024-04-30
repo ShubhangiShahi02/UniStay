@@ -69,6 +69,8 @@
             font-weight: bold; /* Making the text bold */
             font-size: 20px; /* Changing the font size */
         }
+        
+        
     </style>
 </head>
 <body>
@@ -339,7 +341,10 @@
   				</div>
 <br>
 <div class="button-container">
- 			<button type="submit" class="btn btn-warning">Post</button>
+ 			<button type="submit" class="btn btn-warning">
+  <a href="Post_Property_photo.jsp" style="text-decoration: none; color: black;">Post</a>
+</button>
+
   			</div>	
             </form>
         </div>
