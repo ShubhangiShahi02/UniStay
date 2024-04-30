@@ -12,66 +12,68 @@
     <!-- Custom CSS -->
      <link rel="stylesheet"  href="style.css" >
     <style>
-   @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400&display=swap');
 
-        body {
-            background: #dcdcdc;
-            padding-top: 80px;
-        }
+    body {
+        background: #dcdcdc;
+        padding-top: 80px;
+    }
 
-       .form-container {
-            padding: 30px;
-            position: absolute;
-            left: 0;
-            top: 60px;
-            max-width: 1000px; /* Adjust the max-width as needed */
-            width: 100%; /* Ensure the form takes up the full width of its container */
-            margin: 0 auto; /* Center the form horizontally */
-        }
+    .form-container {
+        padding: 30px;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        max-width: 1000px; /* Adjust the max-width as needed */
+        width: 100%; /* Ensure the form takes up the full width of its container */
+        margin: 0 auto; /* Center the form horizontally */
+    }
 
-        .form-check-inline .form-check-input {
-            margin-right: 10px;
-        }
+    .form-check-inline .form-check-input {
+        margin-right: 10px;
+    }
 
-        .Per-Det p,
-        .Pro-Det p {
-            display: inline-block;
-            margin-right: 10px;
-        }
-        
-     .btn-warning {
-  background-color: #ffd300;
-  color: #fff;
-  border: none;
-  padding: 10px 70px; /* Increased the padding */
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
+    .Per-Det p,
+    .Pro-Det p {
+        display: inline-block;
+        margin-right: 10px;
+    }
 
-.button-container {
-  text-align: center;
-}
+    .btn-warning {
+        background-color: #ffd300;
+        color: #fff;
+        border: none;
+        padding: 10px 70px; /* Increased the padding */
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
 
+    .button-container {
+        text-align: center;
+    }
 
-.btn-warning:hover {
-  background-color: #ffc107;
-}   
+    .btn-warning:hover {
+        background-color: #ffc107;
+    }
 
-        /* Styling for p tag */
-        p {
-            font-weight: bold; /* Making the text bold */
-            font-size: 16px; /* Changing the font size */
-        }
+    /* Styling for p tag */
+    p {
+        font-weight: bold; /* Making the text bold */
+        font-size: 16px; /* Changing the font size */
+    }
 
-        /* Styling for h6 tag */
-        h6 {
-            font-weight: bold; /* Making the text bold */
-            font-size: 20px; /* Changing the font size */
-        }
-        
-        
-    </style>
+    /* Styling for h6 tag */
+    h6 {
+        font-weight: bold; /* Making the text bold */
+        font-size: 20px; /* Changing the font size */
+    }
+
+    /* Set input text color to black */
+    .input-field {
+        color: black;
+    }
+</style>
 </head>
 <body>
 <!-- Navbar/Banner -->
@@ -137,8 +139,8 @@
                 <!-- Property Location -->
                 <h6>Property Location</h6>  
                 <div class="Pro-Loc">
-                    <input type="text" name="city" class="input-field" placeholder="Enter City" required>
-                    <input type="text" name="locality" class="input-field" placeholder="Enter Locality" required>
+                 <input type="text" name="username" class="input-field form-control mb-2" placeholder="Enter City" required>
+                    <input type="text" name="mobileno" class="input-field form-control mb-2" placeholder="Enter Locality" required>
                 </div>
                 <br>    
                 <!-- Property Features -->
